@@ -125,12 +125,12 @@ html,
     position: relative;
     min-height: 100vh;
   }
-  .menu_sec .content {
+  /* .menu_sec .content {
     position: fixed;
     top: 0;
     height: 100%;
     width: 100%;
-  }
+  } */
 
   
 
@@ -217,7 +217,7 @@ html,
     align-items: flex-start;
   } .menu_address_ctnr {
     width: clamp(10rem, 83vw, 41rem);
-    height: clamp(10rem, calc(40vh - 3rem), 30rem);
+    height: clamp(10rem, calc(50vh - 5rem), 30rem);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -281,8 +281,8 @@ html,
     gap: clamp(0.4rem, 3vw, 0.6rem);
     margin-bottom: clamp(0.6rem, 2vw, 0.8rem);
   } .social_bts a {
-    width: clamp(1.8rem, 8vw, 2.3rem);
-    height: clamp(1.8rem, 8vw, 2.3rem);
+    width: clamp(1.8rem, 8vw, 2.1rem);
+    height: clamp(1.8rem, 8vw, 2.1rem);
     border-radius: 0.4rem;
     background-size: 60% 60%, cover;
     background-position: center;
@@ -417,6 +417,8 @@ html,
     line-height: 1;
   } .place {
     background-color: transparent;
+  } .menu_address_ctnr {
+    height:unset;
   }
 }
 
