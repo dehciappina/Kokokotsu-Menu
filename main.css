@@ -171,7 +171,8 @@ html,
 }
 
 .neon, .neon:after {
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
@@ -210,14 +211,14 @@ html,
     position: absolute;
     top: clamp(3.5rem, 5vw, 7rem);
     left: clamp(1.5rem, 9vw, 3rem);
-    bottom: clamp(1rem, 3vw, 4rem);
+    bottom: clamp(1.5rem, 7vw, 4rem);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
   } .menu_address_ctnr {
     width: clamp(10rem, 83vw, 41rem);
-    height: clamp(10rem, calc(50vh - 5rem), 30rem);
+    max-height: 38vh;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -418,7 +419,7 @@ html,
   } .place {
     background-color: transparent;
   } .menu_address_ctnr {
-    height:unset;
+    max-height: unset;
   }
 }
 
