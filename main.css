@@ -171,11 +171,9 @@ html,
 }
 
 .neon, .neon:after {
-  /* position: absolute; */
-  position: fixed;
+  position: absolute;
   right: 0;
-  top: 0;
-  bottom: 0;
+  height: 100%;
   background-image: linear-gradient(0deg, #f00, #fb0094, #00f, #0f0,#ff0, #f00);
   animation: steam 3s linear infinite reverse;
   background-size: 100%;
@@ -450,6 +448,7 @@ html,
 
   .left_ctnr {
     flex-direction: row;
+    gap: 3vw;
   } .menu_ctnr {
     margin: 0 0 0 2vw;
     left: 0;
@@ -466,6 +465,9 @@ html,
     width: clamp(11rem, calc(80vw - 10rem), 32rem);
   } .menu_address_ctnr {
     height: 80vh;
+    max-height: unset;
+    margin: 0 auto;
+    width: unset;
   }
 }
 
