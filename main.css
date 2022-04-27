@@ -367,8 +367,8 @@ html,
   
   .left_ctnr {
     left: clamp(1.5rem, 9vw, 11rem);
-    top: 4rem;
-    bottom: 4rem;
+    top: 5rem;
+    bottom: 5rem;
   }
 
   .menu_ctnr {
