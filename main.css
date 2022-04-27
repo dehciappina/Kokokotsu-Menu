@@ -444,18 +444,21 @@ html,
   .left_ctnr {
     flex-direction: row;
   } .menu_ctnr {
-    margin: 0 auto;
+    margin: 0 0 0 2vw;
     left: 0;
     top: clamp(2rem, 4vw, 8rem);
     max-width: 33rem;
     padding: 1.2rem;
     width: clamp(11rem, calc(80vw - 10rem), 32rem);
-    height: clamp(31vh, 50vw, 17rem);
+    flex: 1;
+    height: unset;
   } .slogan {
     left: 3rem;
   } .address {
-    margin: 0 auto;
+    margin: 0 0 0 2vw;
     width: clamp(11rem, calc(80vw - 10rem), 32rem);
+  } .menu_address_ctnr {
+    height: 80vh;
   }
 }
 
