@@ -217,7 +217,7 @@ html,
     align-items: flex-start;
   } .menu_address_ctnr {
     width: clamp(10rem, 83vw, 41rem);
-    height: clamp(10rem, calc(40vh - 2rem), 30rem);
+    height: clamp(10rem, calc(45vh - 3rem), 30rem);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -439,7 +439,7 @@ html,
 
 
 
-@media (max-height:600px) and (min-width:120vh) {
+@media (max-height:600px) and (min-width:120vh) and (max-width:1000px) {
   .logo {
     right: clamp(1.5rem, 6vw, 11rem);
     
