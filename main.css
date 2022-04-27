@@ -217,7 +217,7 @@ html,
     align-items: flex-start;
   } .menu_address_ctnr {
     width: clamp(10rem, 83vw, 41rem);
-    height: clamp(10rem, calc(45vh - 3rem), 30rem);
+    height: clamp(10rem, calc(40vh - 3rem), 30rem);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -233,7 +233,7 @@ html,
     box-sizing: border-box;
     max-width: 38rem;
     overflow-y: auto;
-    -webkit-mask-image: linear-gradient(180deg,#0000, #000 9%, #000 80%, #0000);
+    -webkit-mask-image: linear-gradient(180deg,#0000, #000 9%, #000 calc(100% - 1.5rem), #0000);
     flex: 1;
   } .menu_ctnr:hover::-webkit-scrollbar-thumb {
     background-color: rgba(255,255,255,0.3);
