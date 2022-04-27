@@ -179,11 +179,11 @@ html,
   animation: steam 3s linear infinite reverse;
   background-size: 100%;
 } .neon {
-  width: clamp(0.2rem, 2vw, 0.4rem);
+  width: clamp(0.2rem, 1.5vw, 0.4rem);
 } .neon:after {
   content: '';
   filter: blur(1.2rem);
-  width: clamp(0.2rem, 1vw, 0.4rem);
+  width: clamp(0.2rem, 2vw, 0.4rem);
 }
 
 @keyframes steam {
@@ -206,22 +206,32 @@ html,
     display: flex;
   }
 
-  .menu_ctnr {
-    position: relative;
-    left: 0;
-    right: clamp(1.5rem, 9vw, 7rem);
-    top: 62vh;
+  .left_ctnr {
+    position: absolute;
+    top: clamp(3.5rem, 5vw, 7rem);
+    left: clamp(1.5rem, 9vw, 3rem);
+    bottom: clamp(1rem, 3vw, 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  } .menu_address_ctnr {
+    width: clamp(10rem, 83vw, 41rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }.menu_ctnr {
     list-style: none;
     justify-content: flex-end;
     gap: clamp(0.6rem, 7vw, 1.8rem);
     color: var(--light);
     line-height: 1;
     margin: 0;
-    padding: 4vh clamp(0rem, 2vw, 3rem) clamp(1rem, 8vw, 3rem) clamp(1.5rem, 9vw, 3rem);
+    padding: 4vh clamp(0rem, 2vw, 3rem) clamp(1rem, 8vw, 1.5rem) clamp(1.5rem, 9vw, 3rem);
+    margin-left: calc(clamp(1.5rem, 9vw, 3rem) * -1);
     box-sizing: border-box;
-    max-width: 44rem;
-    height: clamp(38vh, 50vw, 21rem);
-    width: clamp(15rem, 90vw, 41rem);
+    max-width: 38rem;
+    height: clamp(31vh, 50vw, 21rem);
     overflow-y: auto;
     -webkit-mask-image: linear-gradient(180deg,#0000, #000 9%, #000 80%, #0000);
   } .menu_ctnr:hover::-webkit-scrollbar-thumb {
@@ -263,10 +273,27 @@ html,
     opacity: 0.6;
     font-weight: 100;
     font-size: clamp(0.6rem, 3.2vw, 0.9rem);
+  } .social_bts {
+    display: flex;
+    gap: clamp(0.4rem, 3vw, 0.6rem);
+    margin-bottom: clamp(0.6rem, 2vw, 0.8rem);
+  } .social_bts a {
+    width: clamp(1.8rem, 9vw, 2.3rem);
+    height: clamp(1.8rem, 9vw, 2.3rem);
+    border-radius: 0.4rem;
+    background-size: 60% 60%, cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color:transparent;
+    background-color:#111;
+  } .tiktok_bt {
+    background-image: url(assets/tiktok.svg);
+  } .instagram_bt {
+    background-image: url(assets/instagram.svg);
   } .slogan {
-    position: absolute;
+    /* position: absolute;
     top: 3.5rem;
-    left: clamp(1.5rem, 9vw, 3rem);
+    left: clamp(1.5rem, 9vw, 3rem); */
     font-size: clamp(1.6rem, calc(2vh + 2vw), 1.8rem);
     font-weight: 600;
     text-transform: uppercase;
@@ -289,6 +316,26 @@ html,
     background-color: rgba(255,255,255,0.1);
     background-image: none;
     width: 4px;
+  }
+
+  .address {
+    color: var(--light);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 100;
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+    width: clamp(10rem, 80vw, 17rem);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  } .place {
+    background-image: url(assets/place.svg);
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
 
@@ -317,23 +364,34 @@ html,
   .manga_sec {
     min-height: 100vh;
   }
+  
+  .left_ctnr {
+    left: clamp(1.5rem, 9vw, 11rem);
+    top: 4rem;
+    bottom: 4rem;
+  }
 
   .menu_ctnr {
-    top: 50vh;
-    left: 6rem;
     width: clamp(10rem, 62vw, 44rem);
     max-width: unset;
     -webkit-mask-image: none;
     background-color: #0000;
     transition: background-color 0.15s ease;
-    max-height: 19rem;
+    max-height: 18rem;
   } .menu_ctnr:hover {
     background-color: #ffffff02;
   }
 
   .slogan {
-    left: 9rem;
-    top: 20vh;
+    /* left: 9rem;
+    top: 20vh; */
+  }
+  .social_bts a {
+    background-color:transparent;
+    transition: background-color 0.5s ease;
+  }.social_bts a:hover {
+    background-color:#111;
+    transition: background-color 0s ease;
   }
 
   .intro_cta {
@@ -347,7 +405,28 @@ html,
   } .intro_cta .indicator {
     border-color: var(--light);
   }
+
+  .address {
+    width: unset;
+    line-height: 1;
+  } .place {
+    background-color: transparent;
+    transform: translateY(-10%);
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -360,16 +439,22 @@ html,
     right: clamp(1.5rem, 6vw, 11rem);
     
   }
-  .menu_ctnr {
+
+  .left_ctnr {
+    flex-direction: row;
+  } .menu_ctnr {
     margin: 0 auto;
     left: 0;
     top: clamp(2rem, 4vw, 8rem);
     max-width: 33rem;
     padding: 1.2rem;
     width: clamp(11rem, calc(80vw - 10rem), 32rem);
-  }
-  .slogan {
+    height: clamp(31vh, 50vw, 17rem);
+  } .slogan {
     left: 3rem;
+  } .address {
+    margin: 0 auto;
+    width: clamp(11rem, calc(80vw - 10rem), 32rem);
   }
 }
 
