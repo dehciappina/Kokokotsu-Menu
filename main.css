@@ -35,6 +35,7 @@ html,
     background-image: url(assets/noise.jpg);
     background-position: center;
     background-size: 16rem;
+    background-attachment: fixed;
   }
   
   body,
@@ -175,7 +176,7 @@ html,
   top: 0;
   bottom: 0;
   background-image: linear-gradient(0deg, #f00, #fb0094, #00f, #0f0,#ff0, #f00);
-  animation: steam 5s linear infinite reverse;
+  animation: steam 3s linear infinite reverse;
   background-size: 100%;
 } .neon {
   width: clamp(0.2rem, 2vw, 0.4rem);
@@ -310,7 +311,7 @@ html,
 @media (min-width:900px) {
 
   body {
-    background-attachment: fixed;
+    background-attachment: initial;
   }
 
   .manga_sec {
