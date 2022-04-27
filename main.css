@@ -217,7 +217,7 @@ html,
     align-items: flex-start;
   } .menu_address_ctnr {
     width: clamp(10rem, 83vw, 41rem);
-    height: clamp(10rem, calc(50vh - 6rem), 30rem);
+    height: clamp(10rem, calc(40vh - 2rem), 30rem);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -265,6 +265,8 @@ html,
     gap: clamp(0.6rem, 1vw, 0.9rem);
     align-items: center;
     text-transform: uppercase;
+    min-width: 3rem;
+    justify-content: left;
   } .menu_ctnr .price_detail {
     font-size: clamp(0.6rem, 2.5vw, 0.7rem);
     width: min-content;
@@ -323,11 +325,11 @@ html,
   .address {
     color: var(--light);
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: clamp(0.6rem, 3vw, 0.8rem);
     font-weight: 100;
     letter-spacing: 0.1rem;
     line-height: 1.5;
-    width: clamp(10rem, 80vw, 17rem);
+    width: clamp(10rem, 80vw, 19rem);
     display: flex;
     align-items: center;
     gap: 1rem;
