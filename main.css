@@ -217,10 +217,11 @@ html,
     align-items: flex-start;
   } .menu_address_ctnr {
     width: clamp(10rem, 83vw, 41rem);
+    height: clamp(10rem, calc(50vh - 6rem), 30rem);
     display: flex;
     flex-direction: column;
     gap: 2rem;
-  }.menu_ctnr {
+  } .menu_ctnr {
     list-style: none;
     justify-content: flex-end;
     gap: clamp(0.6rem, 7vw, 1.8rem);
@@ -234,6 +235,7 @@ html,
     height: clamp(7rem, 30vh, 21rem);
     overflow-y: auto;
     -webkit-mask-image: linear-gradient(180deg,#0000, #000 9%, #000 80%, #0000);
+    flex: 1;
   } .menu_ctnr:hover::-webkit-scrollbar-thumb {
     background-color: rgba(255,255,255,0.3);
   } .menu_ctnr li {
