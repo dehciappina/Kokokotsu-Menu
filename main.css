@@ -336,6 +336,7 @@ html,
     gap: clamp(0.6rem, 1vw, 0.9rem);
     display: flex;
     flex-direction: column;
+    line-height: 1.4;
   }
 
   .address, .veg {
