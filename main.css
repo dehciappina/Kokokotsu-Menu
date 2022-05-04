@@ -176,7 +176,7 @@ html,
   right: 0;
   height: 100%;
   background-image: linear-gradient(0deg, #f00, #fb0094, #00f, #0f0,#ff0, #f00);
-  animation: steam 2.5s linear infinite reverse;
+  animation: steam 3.5s linear infinite reverse;
   background-size: 100%;
 } .neon {
   width: clamp(0.2rem, 1vw, 0.4rem);
@@ -187,7 +187,7 @@ html,
 } .neon:before {
   content: '';
   filter: blur(10rem);
-  width: clamp(2.5rem, 5vw, 3rem);
+  width: clamp(2rem, 5vw, 3rem);
 }
 
 @keyframes steam {
@@ -477,7 +477,7 @@ html,
   } .menu_ctnr {
     margin: 0 0 0 2vw;
     left: 0;
-    top: clamp(2rem, 4vw, 8rem);
+    top: 0;
     max-width: 33rem;
     padding: 1.2rem;
     width: clamp(11rem, calc(80vw - 10rem), 32rem);
@@ -486,7 +486,6 @@ html,
   } .slogan {
     left: 3rem;
   } .address {
-    margin: 0 0 0 2vw;
     width: clamp(11rem, calc(80vw - 10rem), 32rem);
   } .menu_address_ctnr {
     height: 80vh;
