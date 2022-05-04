@@ -19,28 +19,21 @@ document.onreadystatechange = function () {
         // loadingBg.style.opacity = 0;
         // loadingBg.style.visibility = 'hidden';
 
-        setTimeout(() => {
-            if(window.pageYOffset < window.innerHeight / 1.5) {
-                window.scrollTo(window.scrollX, window.scrollY + window.innerHeight);
-            }
-        }, 1600);
+        // setTimeout(() => {
+        //     if(window.pageYOffset < window.innerHeight / 1.5) {
+        //         window.scrollTo(window.scrollX, window.scrollY + window.innerHeight);
+        //     }
+        // }, 1600);
     }
 }
 
-const mangaSec = document.querySelector('.manga_sec');
-let windowPosition;
+// const mangaSec = document.querySelector('.manga_sec');
+// let windowPosition;
 
-document.body.onscroll = function() {
-    windowPosition = window.pageYOffset;
-
-    if(window.pageYOffset < window.innerHeight / 3) {
-        menuCtnr.style.pointerEvents = 'none';
-    } else {
-        menuCtnr.style.pointerEvents = 'initial';
-    }
-
-    mangaSec.style.transform = "translateY( -" + windowPosition + "px)"
-}
+// document.body.onscroll = function() {
+//     windowPosition = window.pageYOffset;
+//     mangaSec.style.transform = "translateY( -" + windowPosition + "px)"
+// }
 
 
 
