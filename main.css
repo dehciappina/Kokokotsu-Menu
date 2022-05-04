@@ -289,10 +289,10 @@ html,
     gap: clamp(0.4rem, 3vw, 0.6rem);
     margin-bottom: clamp(0.6rem, 2vw, 0.8rem);
   } .social_bts a {
-    width: clamp(1.8rem, 7vw, 2.1rem);
-    height: clamp(1.8rem, 7vw, 2.1rem);
+    width: clamp(1.8rem, 7vw, 1.9rem);
+    height: clamp(1.8rem, 7vw, 1.9rem);
     border-radius: 0.4rem;
-    background-size: 60% 60%, cover;
+    background-size: 50% 55%, cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #0C0C0C;
@@ -331,17 +331,16 @@ html,
   
 
   .bullets {
-    font-size: clamp(0.6rem, 3.5vw, 0.9rem);
+    font-size: clamp(0.6rem, 3vw, 0.85rem);
     color: var(--light);
-    gap: 1rem;
+    gap: clamp(0.6rem, 1vw, 0.9rem);
     display: flex;
     flex-direction: column;
   }
 
   .address, .veg {
     font-weight: 100;
-    letter-spacing: 0.05rem;
-    line-height: 1.5;
+    letter-spacing: 0.02rem;
     width: clamp(10rem, 80vw, 19rem);
     display: flex;
     align-items: center;
@@ -350,11 +349,12 @@ html,
     background-image: url(assets/place.svg);
     cursor: pointer;
   } .veg div, .place {
-    width: 1rem;
+    width: 0.9rem;
     height: 1rem;
     background-repeat: no-repeat;
     background-position: center;
     transform: translateY(-10%);
+    line-height: 1.5;
   } .veg span, .address span {
     flex: 1;
   }
