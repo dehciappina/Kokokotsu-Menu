@@ -19,6 +19,7 @@ html,
   :root {
     --light: #ffffff;
     --dark: #0A070B;
+    --lightb:#999;
     --c1: crimson;
     --c1a:pink;
   }
@@ -51,7 +52,6 @@ html,
   a {
     text-decoration: none;
     color: unset;
-    user-select: none;
   }
   
   b {
@@ -83,6 +83,7 @@ html,
   ::selection {
     color: var(--dark);
     background-color: var(--light);
+    font-weight: 900;
   }
   
   /* END OF GLOBAL STYLES */
@@ -280,7 +281,7 @@ html,
     letter-spacing: 0.05rem;
     line-height: 1.1;
   } .menu_ctnr sub {
-    opacity: 0.6;
+    color: var(--lightb);
     font-weight: 100;
     font-size: clamp(0.6rem, 3.2vw, 0.9rem);
     line-height: 1.4;
@@ -350,7 +351,7 @@ html,
     background-image: url(assets/place.svg);
     cursor: pointer;
   } .veg div, .place {
-    width: 0.9rem;
+    width: 0.8rem;
     height: 1rem;
     background-repeat: no-repeat;
     background-position: center;
