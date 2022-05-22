@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work with us | Kokokotsu</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="./main.js" defer></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <section class="menu_sec" id="menu">
+        <div class="content">
+   
+            <div class="left_ctnr">
+
+                <div class="job_ctnr">
+                    <a href="./index.html">Return</a>
+
+                    <picture class="logo_job" class="open_arms_doggo" loading="lazy">
+                        <source srcset="assets/logo.webp" type="image/webp">
+                        <source srcset="assets/logo.png" type="image/png">
+                        <img src="assets/logo.png" alt="Kokokotsu Logo" draggable="false">
+                    </picture>
+
+                    <h1>We're hiring! You can apply down here:</h1>
+
+                    <form name="contact" method="POST" data-netlify="true">
+                        <p>
+                          <label>Forename: <input type="text" name="forename" required/></label>
+                        </p>
+                        <p>
+                          <label>Surname: <input type="text" name="forename" required/></label>
+                        </p>
+                        <p>
+                            <div class="over_18_ctnr">
+                                <label>Are you over 18? </label>
+    
+                                <div class="radios_ctnr">
+        
+                                    <div>
+                                        <label for="above-eighteen">
+                                            <input type="radio" name="is-over-eighteen" value="true" id="above-eighteen" required/>
+                                            Yes
+                                        </label>
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="below-eighteen">
+                                            <input type="radio" name="is-over-eighteen" value="false" id="below-eighteen"/>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </p>
+                        <fieldset>
+                            <legend>Availability along the week between <b>18:00</b> and <b>01:00</b> UK time:</legend>
+
+                            <div class="checkboxes_ctnr">
+                                <div>
+                                    <input type="checkbox" id="monday" name="monday" value="monday">
+                                    <label for="monday">M</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="tuesday" name="tuesday" value="tuesday">
+                                    <label for="tuesday">T</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="wednesday" name="wednesday" value="wednesday">
+                                    <label for="wednesday">W</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="thursday" name="thursday" value="thursday">
+                                    <label for="thursday">T</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="friday" name="friday" value="friday">
+                                    <label for="friday">F</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="saturday" name="saturday" value="saturday">
+                                    <label for="saturday">S</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="sunday" name="sunday" value="sunday">
+                                    <label for="sunday">S</label>
+                                </div>
+                            </div>
+                          </fieldset>
+
+                          <p>
+                            <label>Phone number: <input type="tel" name="forename" required /></label>
+                          </p>
+
+                          <p>
+                            <label>Email: <input type="email" name="forename" required /></label>
+                          </p>
+
+                        <p>
+                          <button class="submit" type="submit">Send</button>
+                        </p>
+                      </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>

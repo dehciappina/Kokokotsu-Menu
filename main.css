@@ -35,7 +35,7 @@ html,
     overflow-y: scroll;
     background-image: url(assets/noise.jpg);
     background-position: center;
-    background-size: 16rem;
+    background-size: 31vh;
     background-attachment: fixed;
   }
   
@@ -63,7 +63,7 @@ html,
     max-width: 100%;
   }
   
-  ::-webkit-scrollbar {
+  body::-webkit-scrollbar {
     width: 0;
   }
   
@@ -182,12 +182,12 @@ html,
   width: clamp(0.2rem, 1vw, 0.4rem);
 } .neon:after {
   content: '';
-  filter: blur(1.2rem);
-  width: clamp(0.2rem, 2vw, 0.4rem);
+  filter: blur(1.4rem);
+  width: clamp(0.2rem, 1vw, 0.4rem);
 } .neon:before {
   content: '';
-  filter: blur(10rem);
-  width: clamp(2rem, 5vw, 3rem);
+  filter: blur(6rem);
+  width: clamp(1rem, 3vw, 2rem);
 }
 
 @keyframes steam {
@@ -332,7 +332,7 @@ html,
   
 
   .bullets {
-    font-size: clamp(0.6rem, 3vw, 0.85rem);
+    font-size: clamp(0.6rem, 3.5vw, 0.85rem);
     color: var(--light);
     gap: clamp(0.6rem, 1vw, 0.9rem);
     display: flex;
@@ -340,7 +340,7 @@ html,
     line-height: 1.4;
   }
 
-  .address, .veg {
+  .address, .veg, .job {
     font-weight: 100;
     letter-spacing: 0.02rem;
     width: clamp(10rem, 80vw, 19rem);
@@ -350,15 +350,19 @@ html,
   } .place {
     background-image: url(assets/place.svg);
     cursor: pointer;
-  } .veg div, .place {
+  } .veg div, .place, .job div {
     width: 0.8rem;
     height: 1rem;
     background-repeat: no-repeat;
     background-position: center;
-    transform: translateY(-10%);
+    transform: translateY(-20%);
     line-height: 1.5;
   } .veg span, .address span {
     flex: 1;
+  }
+
+  .job div {
+    background-image: url(assets/job.svg);
   }
 
 
@@ -383,6 +387,175 @@ html,
 
 
 
+
+
+
+
+
+
+
+
+
+
+  
+  .job_ctnr form::-webkit-scrollbar {
+    width: 4px;
+  }
+
+
+  .job_ctnr {
+    color:var(--light);
+  } .logo_job {
+    width: clamp(10rem, 80vw, 19rem);
+    display: block;
+    margin: 2rem 0 1rem;
+  } .job_ctnr a {
+    font-size: 1.1rem;
+  } .job_ctnr h1 {
+    font-weight: 100;
+    font-size: clamp(1rem, 5vw, 1.2rem);
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    background: -webkit-linear-gradient(30deg, #fffc00, #ff9c00, #f000ff,#00baff, #0f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #0000;
+  }
+
+  form {
+    width: clamp(11rem, 80vw, 30rem);
+    max-height: clamp(50vh, 200vw, calc(60vh - 6vw));
+    overflow: auto;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding-right: clamp(1rem, 2vw, 2rem);
+  } form input {
+
+  } form input::placeholder {
+    
+  } form textarea {
+    min-height: 5rem;
+    max-height: 10rem;
+    max-width: 30rem;
+    min-width: 10rem;
+  } form input:not([type="radio"]), form textarea {
+    width: 100%;
+    height: clamp(1.5rem, 10vw, 3rem);
+    box-sizing: border-box;
+    border: 0.1rem solid #222;
+    background-color: #0000;
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.9rem 0;
+    color: var(--light);
+    font-size: 1rem;
+    margin: 0;
+  } form p, form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  } form .checkboxes_ctnr {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    font-size: 1rem;
+  } .submit {
+    background-color: var(--light);
+    padding: 0.6rem;
+    font-weight: 900;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    margin-top: 2rem;
+  } form .checkboxes_ctnr input {
+    width: clamp(1.4rem, 6.5vw, 1.7rem);
+  } .checkboxes_ctnr > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  } .checkboxes_ctnr label {
+    font-weight: 900;
+    font-size: clamp(1.3rem, 6vw, 1.4rem);
+  } fieldset {
+    margin-bottom: 1rem;
+    border: 0.1rem solid #222;
+    border-radius: 0.4rem;
+  } fieldset legend {
+    line-height: 1.5;
+  } fieldset legend b {
+    background-color:rgba(255,255,255,0.06);
+    font-weight: 100;
+  }
+
+  .over_18_ctnr {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  } .radios_ctnr, .radios_ctnr label {
+    display: flex;
+    flex-direction: row;
+  } .radios_ctnr {
+    gap: 1rem;
+  } .radios_ctnr label  {
+    gap: 0.4rem;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 @media (min-width:900px) {
 
   body {
@@ -444,6 +617,23 @@ html,
   } .menu_address_ctnr {
     max-height: unset;
   }
+
+
+
+
+
+  form .checkboxes_ctnr {
+    justify-content: left;
+  } .checkboxes_ctnr > div {
+    flex:unset;
+    padding: 0 clamp(0.4rem, 0.4vw, 1rem);
+  }
+
+
+
+
+
+
 }
 
 
@@ -526,5 +716,57 @@ html,
         font-size:32px;
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
