@@ -203,7 +203,7 @@ html,
   .logo {
     position: absolute;
     transform: rotate(-90deg) translate(-50%, 150%);
-    width: clamp(50vh, calc(100vw - 23rem), 80vh);
+    width: clamp(45vh, calc(100vw - 23rem), 80vh);
     max-width: unset;
     right: clamp(1.5rem, 9vw, 11rem);
   } .logo img {
@@ -221,10 +221,10 @@ html,
     align-items: flex-start;
   } .menu_address_ctnr {
     width: clamp(10rem, 83vw, 41rem);
-    max-height: 38vh;
+    max-height: 42vh;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: clamp(1rem, 5vw, 2rem);
     position: relative;
     z-index: 2;
   } .menu_ctnr {
@@ -459,8 +459,8 @@ select:-webkit-autofill:focus {
     width: 100%;
     height: clamp(1.5rem, 10vw, 3rem);
     box-sizing: border-box;
-    border: 0.1rem solid #222;
-    background-color: #0000;
+    border: 0.1rem solid #191919;
+    background-color: #0005;
     border-radius: 0.4rem;
     padding: 0 0.9rem 0;
     color: var(--light);
@@ -477,7 +477,7 @@ select:-webkit-autofill:focus {
     justify-content: space-between;
     font-size: 1rem;
     width: 100%;
-    margin: 0.6rem 0 0;
+    margin: 3.6rem 0 0;
   } .submit {
     position: relative;
     color: var(--light);
@@ -552,16 +552,18 @@ select:-webkit-autofill:focus {
     cursor: pointer;
   } .checkboxes_ctnr > div:hover label {
     
-  }  fieldset {
-    margin-bottom: 0.8rem;
-    border: 0.1rem solid #222;
+  } fieldset {
+    position: relative;
+    border: none;
     border-radius: 0.4rem;
     display: flex;
-    padding: 0rem 0.7rem 1.2rem;
+    padding: 0;
+    margin: 0 0 1rem;
   } fieldset legend {
     line-height: 1.5;
     font-size: clamp(0.9rem, 4vw, 1rem);
-    width: 85%;
+    position: absolute;
+    top: 0;
   } fieldset legend b {
     background-color:rgba(255,255,255,0.06);
     font-weight: 100;
@@ -737,6 +739,8 @@ select:-webkit-autofill:focus {
     right: 0;
     transform: translateX(100%);
     margin: 0;
+  } fieldset legend {
+    width: 85%;
   }
 
 
