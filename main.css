@@ -430,6 +430,7 @@ select:-webkit-autofill:focus {
     background: -webkit-linear-gradient(30deg, #fffc00, #ff9c00, #f000ff,#00baff, #0f6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: #0000;
+    user-select: none;
   }
 
   form {
