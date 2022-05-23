@@ -195,7 +195,16 @@ html,
 		background-position: 0 0;
 	}
 	100% {
-		background-position: 0 100vh;
+		background-position: 0 100%;
+	}
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 100vw 0;
 	}
 }
 
@@ -437,6 +446,7 @@ select:-webkit-autofill:focus {
     max-height: clamp(50vh, 200vw, calc(60vh - 6vw));
     overflow-y: auto;
     overflow-x: clip;
+    -webkit-overflow-scrolling: auto;
     font-size: 1rem;
     display: flex;
     flex-direction: column;
@@ -476,16 +486,28 @@ select:-webkit-autofill:focus {
     width: 100%;
     margin: 0.3rem 0 0;
   } .submit {
-    background-color: var(--light);
-    color: var(--dark);
+    position: relative;
+    background-color: #0000;
+    color: var(--light);
     padding: 0.5rem;
-    font-weight: 900;
     font-size: 1rem;
     border: none;
     border-radius: 0.4rem;
     cursor: pointer;
     margin-top: 1rem;
-    border: 0.2rem solid #CCC;
+    border: 0.1rem solid #AAA;
+    margin-bottom: 1rem;
+    background-color: #0a0a0a;
+    box-shadow: 0 0.2rem, inset 0 0;
+    transform: translateY(0);
+    transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+  } .submit:hover {
+    transform:translateY(0.2rem);
+    box-shadow: 0 0, inset 0 0;
+    background-color:#0f0f0f;
+  } .submit:active {
+    transform:translateY(0.3rem);
+    box-shadow: 0 0, inset 0 -0.1rem;
   } form .checkboxes_ctnr input {
     width: clamp(1.4rem, 6.5vw, 1.7rem);
     height: clamp(1.4rem, 6.5vw, 1.7rem);
