@@ -422,14 +422,15 @@ html,
   }
 
   form {
-    width: clamp(11rem, 80vw, 30rem);
+    width: clamp(11rem, 84vw, 30rem);
     max-height: clamp(50vh, 200vw, calc(60vh - 6vw));
     overflow: auto;
     font-size: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1.1rem;
-    padding-right: clamp(1rem, 2vw, 2rem);
+    padding-right: clamp(1rem, 6vw, 2rem);
+    box-sizing: border-box;
   } form input {
 
   } form input::placeholder {
