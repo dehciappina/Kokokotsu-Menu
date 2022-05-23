@@ -12,6 +12,7 @@
 <body>
     <section class="menu_sec" id="menu">
         <div class="content">
+            <div class="neon"></div>
    
             <div class="left_ctnr">
 
@@ -24,7 +25,7 @@
                         <img src="assets/logo.png" alt="Kokokotsu Logo" draggable="false">
                     </picture>
 
-                    <h1>We're hiring! You can apply down here:</h1>
+                    <h1>We're hiring! Apply here:</h1>
 
                     <form name="contact" method="POST" data-netlify="true">
                         <p>
@@ -41,14 +42,14 @@
         
                                     <div>
                                         <label for="above-eighteen">
-                                            <input type="radio" name="is-over-eighteen" value="true" id="above-eighteen" required/>
+                                            <input type="radio" name="above_eighteen" value="true" id="above-eighteen" required/>
                                             Yes
                                         </label>
                                     </div>
                                     
                                     <div>
                                         <label for="below-eighteen">
-                                            <input type="radio" name="is-over-eighteen" value="false" id="below-eighteen"/>
+                                            <input type="radio" name="above_eighteen" value="false" id="below-eighteen"/>
                                             No
                                         </label>
                                     </div>
@@ -97,11 +98,11 @@
                           </fieldset>
 
                           <p>
-                            <label>Phone number: <input type="tel" name="forename" required /></label>
+                            <label>Phone number: <input type="tel" name="tel" required /></label>
                           </p>
 
                           <p>
-                            <label>Email: <input type="email" name="forename" required /></label>
+                            <label>Email: <input type="email" name="email" required /></label>
                           </p>
 
                         <p>

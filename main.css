@@ -627,6 +627,11 @@ html,
   } .checkboxes_ctnr > div {
     flex:unset;
     padding: 0 clamp(0.4rem, 0.4vw, 1rem);
+    transition: background-color 0.4s ease;
+    border-radius: 0.2rem;
+  } .checkboxes_ctnr > div:hover {
+    transition: background-color 0.05s ease;
+    background-color: #FFFFFF0a;
   }
 
 
