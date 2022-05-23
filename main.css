@@ -439,7 +439,7 @@ select:-webkit-autofill:focus {
     font-size: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
+    gap: 1.2rem;
     padding-right: clamp(1rem, 6vw, 2rem);
     box-sizing: border-box;
   } form input {
@@ -491,7 +491,7 @@ select:-webkit-autofill:focus {
     font-weight: 900;
     font-size: clamp(1.3rem, 6vw, 1.4rem);
   } fieldset {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     border: 0.1rem solid #222;
     border-radius: 0.4rem;
   } fieldset legend {
@@ -505,6 +505,7 @@ select:-webkit-autofill:focus {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
+    margin: 0.8rem 0;
   } .radios_ctnr, .radios_ctnr label {
     display: flex;
     flex-direction: row;
