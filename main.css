@@ -497,14 +497,14 @@ select:-webkit-autofill:focus {
     margin-top: 1rem;
     border: 0.1rem solid #AAA;
     margin-bottom: 1rem;
-    background-color: #0a0a0a;
+    background-color: #111;
     box-shadow: 0 0.2rem, inset 0 0;
     transform: translateY(0);
     transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
   } .submit:hover {
     transform:translateY(0.2rem);
     box-shadow: 0 0, inset 0 0;
-    background-color:#0f0f0f;
+    background-color:#0a0a0a;
   } .submit:active {
     transform:translateY(0.3rem);
     box-shadow: 0 0, inset 0 -0.1rem;
