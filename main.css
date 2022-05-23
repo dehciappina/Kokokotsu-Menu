@@ -501,8 +501,8 @@ select:-webkit-autofill:focus {
     transform:translateY(0.3rem);
     box-shadow: 0 0, inset 0 -0.1rem;
   } form .checkboxes_ctnr input {
-    width: clamp(1.4rem, 6.5vw, 1.7rem);
-    height: clamp(1.4rem, 6.5vw, 1.7rem);
+    width: 1.5rem;
+    height: 1.5rem;
     cursor: pointer;
   } .checkboxes_ctnr > div {
     position: relative;
@@ -547,7 +547,7 @@ select:-webkit-autofill:focus {
     text-align: left;
     flex: 1;
     height: 100%;
-    line-height: clamp(1.4rem, 6.5vw, 1.7rem);
+    line-height: 1.5rem;
   } .checkboxes_ctnr > div label{
     transition: transform 0.5s ease;
     cursor: pointer;
