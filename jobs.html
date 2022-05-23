@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="./main.css">
     <script src="./main.js" defer></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <script defer>
+        document.querySelector("form").addEventListener("submit", handleSubmit);
+
+        const handleSubmit = (e) => {
+        e.preventDefault();
+        let myForm = document.getElementById("jobForm");
+        let formData = new FormData(myForm);
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString(),
+        })
+            .then(() => console.log("Form successfully submitted"))
+            .catch((error) => alert(error));
+        };
+    </script>
 </head>
 <body>
     <section class="menu_sec" id="menu">
@@ -27,7 +44,7 @@
 
                     <h1>We're hiring! Apply here:</h1>
 
-                    <form name="contact" method="POST" data-netlify="true">
+                    <form name="jobApplicationForm" id="jobForm" method="POST" data-netlify="true">
                         <p>
                           <label>Forename: <input type="text" name="forename" required/></label>
                         </p>
