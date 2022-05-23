@@ -116,7 +116,12 @@
 
 <script>
     function formSuccess() {
-        alert("Form Successfully Sent");
+        const submitBt = document.querySelector('.submit');
+
+        submitBt.innerHTML = "Application sent. Thank you!"
+        setTimeout(() => {
+            
+        }, 1500);
 
         let allInputs = document.querySelectorAll('input');
 

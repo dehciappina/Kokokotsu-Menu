@@ -488,7 +488,6 @@ select:-webkit-autofill:focus {
     align-items: center;
     flex: 1;
   } .checkboxes_ctnr label {
-    font-weight: 900;
     font-size: clamp(1.3rem, 6vw, 1.4rem);
   } fieldset {
     margin-bottom: 0.8rem;
@@ -642,6 +641,8 @@ select:-webkit-autofill:focus {
     padding: 0 clamp(0.4rem, 0.4vw, 1rem);
     transition: background-color 0.4s ease;
     border-radius: 0.2rem;
+    align-items: stretch;
+    text-align: center;
   } .checkboxes_ctnr > div:hover {
     transition: background-color 0.05s ease;
     background-color: #FFFFFF0a;
