@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work with us | Kokokotsu</title>
+    <title>Work with us! | Kokokotsu</title>
     <link rel="stylesheet" href="./main.css">
     <script src="./main.js" defer></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -117,6 +117,17 @@
 </body>
 
 <script>
+    function formSuccess() {
+        alert("Form Successfully Sent");
+
+        let allInputs = document.querySelectorAll('input');
+
+        for(i=0;i<allInputs.length;i++) {
+            allInputs[i].value = "";
+            allInputs[i].checked = false;
+        }
+    }
+
     const handleSubmit = (e) => {
     e.preventDefault();
     let myForm = document.getElementById("jobForm");
@@ -126,7 +137,7 @@
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
     })
-        .then(() => alert("Form successfully submitted"))
+        .then(() => formSuccess())
         .catch((error) => alert(error));
     };
 
