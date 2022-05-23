@@ -490,13 +490,40 @@ select:-webkit-autofill:focus {
     width: clamp(1.4rem, 6.5vw, 1.7rem);
     height: clamp(1.4rem, 6.5vw, 1.7rem);
   } .checkboxes_ctnr > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
+    position: relative;
+  } .checkboxes_ctnr > div span {
+    position: absolute;
+    bottom: -4rem;
+    left: 0;
+    transform: translateX(-30%);
+    background-color: var(--dark);
+    z-index: 3;
+    padding: 0.2rem;
+    border: 0.1rem solid #222;
+    border-radius: 0.3rem;
+    opacity:0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+  } .checkboxes_ctnr > div:hover span {
+    opacity:1;
+    visibility: visible;
   } .checkboxes_ctnr label {
     font-size: clamp(1.3rem, 6vw, 1.4rem);
-    padding: 0.5rem 0 0;
+    position: absolute;
+    color: var(--light);
+    top: 62%;
+    right: 0rem;
+    left: 0rem;
+    /* bottom: 0; */
+    font-weight: 900;
+    text-align: center;
+    transform: translateY(20%);
+    background: var(--dark);
+    line-height: 1;
+    padding-top: 0.4rem;
+    border: 0.1rem solid #222;
+    border-radius: 0.3rem;
   } fieldset {
     margin-bottom: 0.8rem;
     border: 0.1rem solid #222;
@@ -542,24 +569,6 @@ select:-webkit-autofill:focus {
     transition: opacity 0.2s ease, visibility 0.2s ease;
   }
 
-  @media (pointer: coarse), (hover: none) {
-    [title] {
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-    [title]:focus::after {
-      content: attr(title);
-      position: absolute;
-      top: 90%;
-      color: #000;
-      background-color: #fff;
-      border: 1px solid;
-      width: fit-content;
-      padding: 3px;
-    }
-  
-  }
 
 
 
@@ -681,7 +690,7 @@ select:-webkit-autofill:focus {
     justify-content: left;
   } .checkboxes_ctnr > div {
     flex:unset;
-    padding: 0.4rem clamp(0.4rem, 0.4vw, 1rem) 0;
+    margin: 0 clamp(0.4rem, 0.4vw, 1rem) 0;
     transition: background-color 0.4s ease;
     border-radius: 0.2rem;
     align-items: stretch;
