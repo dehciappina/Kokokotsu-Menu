@@ -410,7 +410,7 @@ select:-webkit-autofill:focus {
 
   
   .job_ctnr form::-webkit-scrollbar {
-    width: 4px;
+    width: 0.15rem;
   }
 
 
@@ -435,7 +435,8 @@ select:-webkit-autofill:focus {
   form {
     width: clamp(11rem, 84vw, 30rem);
     max-height: clamp(50vh, 200vw, calc(60vh - 6vw));
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: clip;
     font-size: 1rem;
     display: flex;
     flex-direction: column;
@@ -466,22 +467,28 @@ select:-webkit-autofill:focus {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
+    z-index: 2;
   } form .checkboxes_ctnr {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     font-size: 1rem;
+    width: 100%;
+    margin: 0.3rem 0 0;
   } .submit {
     background-color: var(--light);
-    padding: 0.6rem;
+    color: var(--dark);
+    padding: 0.5rem;
     font-weight: 900;
     font-size: 1rem;
     border: none;
     border-radius: 0.4rem;
     cursor: pointer;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    border: 0.2rem solid #CCC;
   } form .checkboxes_ctnr input {
     width: clamp(1.4rem, 6.5vw, 1.7rem);
+    height: clamp(1.4rem, 6.5vw, 1.7rem);
   } .checkboxes_ctnr > div {
     display: flex;
     flex-direction: column;
@@ -489,18 +496,22 @@ select:-webkit-autofill:focus {
     flex: 1;
   } .checkboxes_ctnr label {
     font-size: clamp(1.3rem, 6vw, 1.4rem);
+    padding: 0.5rem 0 0;
   } fieldset {
     margin-bottom: 0.8rem;
     border: 0.1rem solid #222;
     border-radius: 0.4rem;
+    display: flex;
   } fieldset legend {
     line-height: 1.5;
+    font-size: clamp(0.9rem, 4vw, 1rem);
   } fieldset legend b {
     background-color:rgba(255,255,255,0.06);
     font-weight: 100;
   }
 
   .over_18_ctnr {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
@@ -514,7 +525,22 @@ select:-webkit-autofill:focus {
     gap: 0.4rem;
   }
 
-
+  .below_18_input {
+    position: relative;
+  } .underage_warning {
+    color: var(--c1);
+    right: 0;
+    left: 0;
+    top: 0;
+    font-size: 0.8rem;
+    border-radius: 0.4rem;
+    font-weight: 900;
+    width: 100%;
+    margin: 0 auto;
+    display: none;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
 
 
 
@@ -638,7 +664,7 @@ select:-webkit-autofill:focus {
     justify-content: left;
   } .checkboxes_ctnr > div {
     flex:unset;
-    padding: 0 clamp(0.4rem, 0.4vw, 1rem);
+    padding: 0.4rem clamp(0.4rem, 0.4vw, 1rem) 0;
     transition: background-color 0.4s ease;
     border-radius: 0.2rem;
     align-items: stretch;
@@ -646,6 +672,8 @@ select:-webkit-autofill:focus {
   } .checkboxes_ctnr > div:hover {
     transition: background-color 0.05s ease;
     background-color: #FFFFFF0a;
+  } .underage_warning {
+    font-weight: 100;
   }
 
 

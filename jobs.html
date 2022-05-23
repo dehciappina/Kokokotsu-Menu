@@ -40,22 +40,24 @@
                                 <div class="radios_ctnr">
         
                                     <div>
-                                        <label for="above-eighteen">
+                                        <label for="above-eighteen" class="over_18_input">
                                             <input type="radio" name="above_eighteen" value="true" id="above-eighteen" required/>
                                             Yes
                                         </label>
                                     </div>
                                     
                                     <div>
-                                        <label for="below-eighteen">
-                                            <input type="radio" name="above_eighteen" value="false" id="below-eighteen"/>
+                                        <label for="below-eighteen" class="below_18_input">
+                                            <input type="radio" name="above_eighteen" value="false" id="below-eighteen" required="false"/>
                                             No
                                         </label>
                                     </div>
                                 </div>
+                                            
+                                <span class="underage_warning">You must be over 18 to submit on this job application.</span>
                             </div>
                         <fieldset>
-                            <legend>Availability along the week between <b>18:00</b> and <b>01:00</b> UK time:</legend>
+                            <legend>Which days are you regularly available from <b>6pm</b> to <b>1am?</b></legend>
 
                             <div class="checkboxes_ctnr">
                                 <div>
@@ -104,7 +106,7 @@
                           </p>
 
                         <p>
-                          <button class="submit" type="submit">Send</button>
+                          <button class="submit" type="submit">Send application</button>
                         </p>
                       </form>
                 </div>
@@ -118,10 +120,9 @@
     function formSuccess() {
         const submitBt = document.querySelector('.submit');
 
-        submitBt.innerHTML = "Application sent. Thank you!"
         setTimeout(() => {
-            
-        }, 1500);
+            submitBt.innerHTML = "Job application sent. Thanks!"
+        }, 300);
 
         let allInputs = document.querySelectorAll('input');
 
@@ -130,6 +131,20 @@
             allInputs[i].checked = false;
         }
     }
+    
+    const below18Input = document.querySelector('.below_18_input input')
+    const underAgeWarning = document.querySelector('.underage_warning')
+    const over18Input = document.querySelector('.over_18_input input')
+
+    below18Input.addEventListener('click', function() {
+        this.checked = false;
+
+        underAgeWarning.style.display = 'initial';
+    })
+
+    over18Input.addEventListener('click', function() {
+        underAgeWarning.style.display = 'none';
+    })
 
     const handleSubmit = (e) => {
     e.preventDefault();
