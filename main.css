@@ -489,23 +489,27 @@ select:-webkit-autofill:focus {
   } form .checkboxes_ctnr input {
     width: clamp(1.4rem, 6.5vw, 1.7rem);
     height: clamp(1.4rem, 6.5vw, 1.7rem);
+    transform: translateY(0.2rem);
   } .checkboxes_ctnr > div {
     position: relative;
   } .checkboxes_ctnr > div span {
+    font-size: 0.9rem;
     position: absolute;
-    bottom: -4rem;
-    left: 0;
-    transform: translateX(-30%);
+    bottom: -3.6rem;
+    left: calc(clamp(1.4rem, 6.5vw, 1.7rem) / 2);
+    transform: translateX(-50%);
     background-color: var(--dark);
     z-index: 3;
-    padding: 0.2rem;
+    padding: 0.2rem 0.4rem;
     border: 0.1rem solid #222;
     border-radius: 0.3rem;
     opacity:0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.5s 0.1s ease, visibility 0.5s 0.1s ease;
     pointer-events: none;
+    box-shadow: 0 0.2rem 0.6rem 0.1rem var(--dark);
   } .checkboxes_ctnr > div:hover span {
+    transition: opacity 0.2s ease, visibility 0.2s ease;
     opacity:1;
     visibility: visible;
   } .checkboxes_ctnr label {
@@ -518,13 +522,19 @@ select:-webkit-autofill:focus {
     /* bottom: 0; */
     font-weight: 900;
     text-align: center;
-    transform: translateY(20%);
     background: var(--dark);
     line-height: 1;
     padding-top: 0.4rem;
     border: 0.1rem solid #222;
     border-radius: 0.3rem;
-  } fieldset {
+  } .checkboxes_ctnr > div label{
+    transform:scale(1) translateY(20%);
+    transition: transform 0.5s ease;
+    cursor: pointer;
+  } .checkboxes_ctnr > div label:hover {
+    transition: transform 0.2s ease;
+    transform:scale(1.1) translateY(20%);
+  }  fieldset {
     margin-bottom: 0.8rem;
     border: 0.1rem solid #222;
     border-radius: 0.4rem;
@@ -691,14 +701,10 @@ select:-webkit-autofill:focus {
   } .checkboxes_ctnr > div {
     flex:unset;
     margin: 0 clamp(0.4rem, 0.4vw, 1rem) 0;
-    transition: background-color 0.4s ease;
     border-radius: 0.2rem;
     align-items: stretch;
     text-align: center;
-  } .checkboxes_ctnr > div:hover {
-    transition: background-color 0.05s ease;
-    background-color: #FFFFFF0a;
-  } .underage_warning {
+  }.underage_warning {
     font-weight: 100;
   }
 
