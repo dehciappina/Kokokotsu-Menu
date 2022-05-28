@@ -64,7 +64,7 @@ html,
   }
   
   body::-webkit-scrollbar {
-    width: 0.6rem;
+    width: 0.4rem;
   }
   
   ::-webkit-scrollbar-track {
@@ -73,8 +73,6 @@ html,
   
   ::-webkit-scrollbar-thumb {
     background-color: var(--light);
-    outline: 0.2rem solid var(--dark);
-    outline-offset: -0.2rem;
   }
 
   .width1 {
