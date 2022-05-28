@@ -178,7 +178,7 @@
     let windowPosition;
     windowPosition = window.pageYOffset;
     
-    if(window.matchMedia('(min-width:900px)').matches) {
+    if(window.matchMedia('(orientation:landscape) and (min-width:800px)').matches) {
     
         parallaxEl.style.transform = `translate(110%, ${windowPosition / 1.5}px)`;
         

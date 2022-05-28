@@ -186,11 +186,11 @@ html,
   animation: steam 3.5s linear infinite reverse;
   background-size: 100%;
 } .neon {
-  width: clamp(0.2rem, 1vw, 0.4rem);
+  width: clamp(0.15rem, 0.8vw, 0.4rem);
 } .neon:after {
   content: '';
   filter: blur(1.4rem);
-  width: clamp(0.2rem, 1vw, 0.4rem);
+  width: clamp(0.15rem, 0.8vw, 0.4rem);
 } .neon:before {
   content: '';
   filter: blur(6rem);
@@ -447,7 +447,7 @@ select:-webkit-autofill:focus {
   }
 
   form {
-    width: clamp(11rem, 84vw, 33rem);
+    width: clamp(11rem, 85vw, 45rem);
     overflow-y: auto;
     overflow-x: clip;
     -webkit-overflow-scrolling: auto;
@@ -471,9 +471,9 @@ select:-webkit-autofill:focus {
     min-width: 10rem;
   } form input:not([type="radio"]), form textarea {
     width: 100%;
-    height: clamp(1.5rem, 10vw, 3rem);
+    height: clamp(1.5rem, 11vw, 3rem);
     box-sizing: border-box;
-    border: 0.1rem solid #191919;
+    border: 0.1rem solid #202020;
     background-color: #0005;
     border-radius: 0.4rem;
     padding: 0 0.9rem 0;
@@ -622,9 +622,11 @@ select:-webkit-autofill:focus {
     margin: 0 0 0.4rem 0;
     font-size: clamp(1rem, 1.1vw, 1.1rem);
     line-height: 1.6;
-    background-color: #ffffff03;
-    padding: 1rem 2rem;
+    background-color: #ffffff04;
+    padding: 1rem 3.5rem 1rem 2rem;
     display: unset;
+    width: max-content;
+    border-left: 0.2rem solid var(--light);
   }
 
 
@@ -675,7 +677,7 @@ select:-webkit-autofill:focus {
 
 
   
-@media (min-width:900px) {
+@media (orientation:landscape) and (min-width:800px) {
 
   body {
     background-attachment: initial;
@@ -742,6 +744,7 @@ select:-webkit-autofill:focus {
 
   form {
     position: initial;
+    width: clamp(11rem, 45vw, 33rem);
   }
   form .checkboxes_ctnr {
     justify-content: left;
@@ -756,7 +759,6 @@ select:-webkit-autofill:focus {
     background-color: #ffffff03;
     padding: 1rem 2rem 1rem 2rem;
     display: block;
-    border-left: 0.2rem solid var(--light);
     will-change: transform;
   } fieldset legend {
     width: 85%;
@@ -815,6 +817,12 @@ select:-webkit-autofill:focus {
     max-height: unset;
     margin: 0 auto;
     width: unset;
+  }
+
+  .job_description {
+    top:0;
+  } form {
+    width: clamp(11rem, 50vw, 26rem);
   }
 
 }
