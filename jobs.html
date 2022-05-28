@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <section class="menu_sec" id="menu">
+    <section class="jobs_sec">
         <div class="content">
             <div class="neon"></div>
    
@@ -29,7 +29,8 @@
 
                     <form name="jobApplicationForm" id="jobForm" method="POST" data-netlify="true">
     
-                        <p class="job_description">Gyoza Master,<br>
+                        <p class="job_description">
+                            <span>Gyoza Master</span>,<br>
                             Bicester,<br>
                             30hrs a week.<br>
                             £10.50 per hour.<br>
@@ -169,5 +170,24 @@
     document.querySelector("form").addEventListener("submit", handleSubmit);
 
     document.querySelector('input').focus()
+</script>
+
+<script>
+    const parallaxEl = document.querySelector('.job_description')
+    
+    let windowPosition;
+    windowPosition = window.pageYOffset;
+    
+    parallaxEl.style.transform = `translate(110%, ${windowPosition / 1.5}px)`;
+    
+    if(window.matchMedia('(min-width:900px)').matches) {
+        document.body.onscroll = function() {
+            windowPosition = window.pageYOffset;
+    
+            parallaxEl.style.transform = `translate(110%, ${windowPosition / 1.5}px)`;
+        }
+        
+        windowPosition = window.pageYOffset;
+    }
 </script>
 </html>
