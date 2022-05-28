@@ -178,9 +178,10 @@
     let windowPosition;
     windowPosition = window.pageYOffset;
     
-    parallaxEl.style.transform = `translate(110%, ${windowPosition / 1.5}px)`;
-    
     if(window.matchMedia('(min-width:900px)').matches) {
+    
+        parallaxEl.style.transform = `translate(110%, ${windowPosition / 1.5}px)`;
+        
         document.body.onscroll = function() {
             windowPosition = window.pageYOffset;
     
