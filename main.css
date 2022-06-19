@@ -243,7 +243,7 @@ html,
     color: var(--light);
     line-height: 1;
     margin: 0;
-    padding: 4vh clamp(0rem, 2vw, 3rem) clamp(1rem, 8vw, 1.5rem) clamp(1.5rem, 9vw, 3rem);
+    padding: 6vh clamp(0rem, 2vw, 3rem) clamp(1rem, 8vw, 1.5rem) clamp(1.5rem, 9vw, 3rem);
     margin-left: calc(clamp(1.5rem, 9vw, 3rem) * -1);
     box-sizing: border-box;
     max-width: 38rem;
@@ -258,7 +258,7 @@ html,
     gap: clamp(0.2rem, 1.5vw, 0.6rem);
     align-items: stretch;
   } .menu_ctnr > li:not(:last-child) {
-    margin-bottom: clamp(1.4rem, 7vw, 1.8rem);
+    margin-bottom: clamp(1.4rem, 9vw, 2rem);
   }  .menu_ctnr > li > div {
     display: flex;
     gap: clamp(0.6rem, 1vw, 0.9rem);
@@ -272,8 +272,11 @@ html,
     height: 0.2rem;
     background-color: var(--light);
   } .menu_ctnr li .divider {
-    border-top: 0.1rem solid #888;
     flex: 1;
+    width: 100%;
+    height: 0.06rem;
+    background-image: linear-gradient(90deg, #ffff6a, #0ff, #ff5bbc);
+    border-radius: 1rem;
   } .menu_ctnr .price_ctnr {
     display: flex;
     gap: clamp(0.6rem, 1vw, 0.9rem);
@@ -362,6 +365,7 @@ html,
     gap: clamp(0.6rem, 4vw, 1rem);
     display: flex;
     flex-direction: column;
+    align-items: baseline;
     line-height: 1.4;
     position: sticky;
     bottom: calc(clamp(4.2rem, 1vw, 6rem) * -1);
@@ -377,7 +381,6 @@ html,
   .address, .veg, .job {
     font-weight: 100;
     letter-spacing: 0.02rem;
-    width: clamp(10rem, 80vw, 19rem);
     display: flex;
     align-items: center;
     gap: 1rem;
