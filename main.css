@@ -18,9 +18,9 @@ html,
   
   :root {
     --light: #ffffff;
+    --lightb:#aaa;
     --dark: #0A070B;
-    --lightb:#999;
-    --c1: crimson;
+    --c1:#fccf03;
     --c1a:pink;
   }
   
@@ -68,11 +68,11 @@ html,
   }
   
   ::-webkit-scrollbar-track {
-    background-color: transparent;
+    background-color: var(--light);
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color: var(--light);
+    background-color: var(--dark);
   }
 
   .width1 {
@@ -185,6 +185,8 @@ html,
   background-image: linear-gradient(0deg, #f00, #fb0094, #00f, #0f0,#ff0, #f00);
   animation: steam 3.5s linear infinite reverse;
   background-size: 100%;
+  z-index: 3;
+  pointer-events: none;
 } .neon {
   width: clamp(0.15rem, 0.8vw, 0.4rem);
 } .neon:after {
@@ -228,11 +230,11 @@ html,
     align-items: flex-start;
   } .menu_address_ctnr {
     width: clamp(10rem, 83vw, 41rem);
-    max-height: 42vh;
     display: flex;
     flex-direction: column;
     gap: clamp(1rem, 5vw, 2rem);
     position: relative;
+    top: clamp(45vh, calc(100vw - 23rem), 80vh);
     z-index: 2;
   } .menu_ctnr {
     list-style: none;
@@ -245,21 +247,19 @@ html,
     margin-left: calc(clamp(1.5rem, 9vw, 3rem) * -1);
     box-sizing: border-box;
     max-width: 38rem;
-    overflow-y: auto;
-    -webkit-mask-image: linear-gradient(180deg,#0000, #000 9%, #000 calc(100% - 1.5rem), #0000);
     flex: 1;
     position: relative;
     z-index: 3;
   } .menu_ctnr:hover::-webkit-scrollbar-thumb {
     background-color: rgba(255,255,255,0.3);
-  } .menu_ctnr li {
+  } .menu_ctnr > li {
     display: flex;
     flex-direction: column;
-    gap: clamp(0.2rem, 1vw, 0.6rem);
+    gap: clamp(0.2rem, 1.5vw, 0.6rem);
     align-items: stretch;
-  } .menu_ctnr li:not(:last-child) {
+  } .menu_ctnr > li:not(:last-child) {
     margin-bottom: clamp(1.4rem, 7vw, 1.8rem);
-  }  .menu_ctnr li > div {
+  }  .menu_ctnr > li > div {
     display: flex;
     gap: clamp(0.6rem, 1vw, 0.9rem);
     align-items: baseline;
@@ -290,8 +290,17 @@ html,
   } .menu_ctnr sub {
     color: var(--lightb);
     font-weight: 100;
-    font-size: clamp(0.6rem, 3.2vw, 0.9rem);
-    line-height: 1.4;
+    font-size: clamp(0.6rem, 3.3vw, 0.9rem);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 98%;
+  } sub p strong, sub p b {
+    color: var(--light);
+    font-weight: 100;
+  } .slogan_ctnr {
+    position: absolute;
   } .social_bts {
     display: flex;
     gap: clamp(0.4rem, 3vw, 0.6rem);
@@ -320,6 +329,15 @@ html,
     -webkit-background-clip: text;
     -webkit-text-fill-color: #0000;
     user-select: none;
+  } .flavours {
+    list-style-type: square;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin: 0.5rem 0;
+    padding: 0 0 0 2em;
+  } .flavours li {
+    color:var(--light);
   }
 
   .menu_ctnr::-webkit-scrollbar {
@@ -339,12 +357,21 @@ html,
   
 
   .bullets {
-    font-size: clamp(0.6rem, 3.5vw, 0.9rem);
+    font-size: clamp(0.6rem, 3.3vw, 0.9rem);
     color: var(--light);
-    gap: clamp(0.6rem, 1vw, 0.9rem);
+    gap: clamp(0.6rem, 4vw, 1rem);
     display: flex;
     flex-direction: column;
     line-height: 1.4;
+    position: sticky;
+    bottom: calc(clamp(4.2rem, 1vw, 6rem) * -1);
+    background-color: var(--dark);
+    background-image: url(assets/noise.jpg);
+    background-position: center;
+    background-size: 31vh;
+    background-attachment: fixed;
+    z-index: 3;
+    padding: 1.2rem 0 3rem;
   }
 
   .address, .veg, .job {
@@ -680,7 +707,7 @@ select:-webkit-autofill:focus {
 @media (orientation:landscape) and (min-width:800px) {
 
   body {
-    background-attachment: initial;
+    /* background-attachment: initial; */
   }
 
   .manga_sec {
@@ -692,17 +719,22 @@ select:-webkit-autofill:focus {
     top: 5rem;
     bottom: 5rem;
   }
+  
+  .logo {
+    position: fixed;
+  } .slogan_ctnr {
+    position: relative;
+  }
 
   .menu_ctnr {
-    width: clamp(10rem, 62vw, 44rem);
-    max-width: unset;
-    -webkit-mask-image: none;
-    background-color: #0000;
-    transition: background-color 0.15s ease;
-    max-height: 20rem;
-    height: clamp(10rem, 35vh, 21rem);
-  } .menu_ctnr:hover {
-    background-color: #ffffff02;
+    width: unset;
+    padding: unset;
+    top: 2rem;
+    margin: 0;
+  } .bullets {
+    position: relative;
+    bottom: unset;
+    padding: 3rem 0 5rem;
   }
 
   .slogan {
@@ -737,6 +769,7 @@ select:-webkit-autofill:focus {
     background-color: transparent;
   } .menu_address_ctnr {
     max-height: unset;
+    top: 2rem;
   }
 
 
@@ -798,13 +831,14 @@ select:-webkit-autofill:focus {
 
   .left_ctnr {
     flex-direction: row;
-    gap: 3vw;
+    gap: 5vw;
+    left: 4rem;
+    top: 3rem;
   } .menu_ctnr {
-    margin: 0 0 0 2vw;
+    margin: 0;
     left: 0;
     top: 0;
     max-width: 33rem;
-    padding: 1.2rem;
     width: clamp(11rem, calc(80vw - 10rem), 32rem);
     flex: 1;
     height: unset;
@@ -817,6 +851,7 @@ select:-webkit-autofill:focus {
     max-height: unset;
     margin: 0 auto;
     width: unset;
+    top: 1rem;
   }
 
   .job_description {
