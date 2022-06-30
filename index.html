@@ -7,6 +7,7 @@
     <title>Kokokotsu | Comic & Japanese Food</title>
     <link rel="stylesheet" href="./main.css">
     <script src="./main.js" defer></script>
+    <script src="./cart.js" defer></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -25,7 +26,12 @@
                 <img src="assets/logo.png" alt="Kokokotsu Logo" draggable="false">
             </picture>
 
-            <div class="neon"></div>
+            <aside class="exit_bg"></aside>
+
+            <section class="cart_sec">
+
+                <div class="neon"></div>
+            </section>
 
             <div class="left_ctnr">
                 <div class="slogan_ctnr">
@@ -46,7 +52,24 @@
                                 <div class="divider"></div>
                                 <div class="price_ctnr">
                                     <span class="price">£3</span>
-                                    <!-- <span class="price_detail">to a good home.</span> -->
+
+                                    <div class="quantity">
+                                        <button onclick="
+                                            if (parseInt(this.nextElementSibling.value) > 0) {
+                                                this.nextElementSibling.value = parseInt(this.nextElementSibling.value)  - 1
+                                            }; checkAmount()">
+                                            <div></div>
+                                        </button>
+
+                                        <input id="edamame_amount" name="number" type="number" readonly value="0">
+                                        
+                                        <button onclick="
+                                            if (parseInt(this.previousElementSibling.value) < 30) {
+                                                this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1; 
+                                            }; checkAmount() ">
+                                            <div></div>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
         
@@ -62,13 +85,30 @@
                                 <div class="divider"></div>
                                 <div class="price_ctnr">
                                     <span class="price">£10</span>
-                                    <!-- <span class="price_detail">five<br>units</span> -->
+
+                                    <div class="quantity">
+                                        <button onclick="
+                                            if (parseInt(this.nextElementSibling.value) > 0) {
+                                                this.nextElementSibling.value = parseInt(this.nextElementSibling.value)  - 1
+                                            }; checkAmount()">
+                                            <div></div>
+                                        </button>
+
+                                        <input id="gyoza_amount" name="number" type="number"  value="0">
+                                        
+                                        <button onclick="
+                                            if (parseInt(this.previousElementSibling.value) < 30) {
+                                                this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1; 
+                                            }; checkAmount() ">
+                                            <div></div>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
         
                             <sub>
                                 <p><strong>Seven delicious pouches of umami goodness, crunchy on one side and soft on the other.</strong></p>
-                                <p>We're not here to lie, using chopsticks does make you look cool... but Gyoza do taste better if just grab them with your hands.</p>
+                                <p>We're not here to lie, using chopsticks does make you look cool... but Gyoza do taste better if you just grab them with your hands.</p>
 
                                 <ul class="flavours">
                                     <li>Pork</li>
@@ -82,9 +122,27 @@
                             <div>
                                 <h2>Mochi</h2>
                                 <div class="divider"></div>
+
                                 <div class="price_ctnr">
                                     <span class="price">£4</span>
-                                    <!-- <span class="price_detail">two<br>units</span> -->
+
+                                    <div class="quantity">
+                                        <button onclick="
+                                            if (parseInt(this.nextElementSibling.value) > 0) {
+                                                this.nextElementSibling.value = parseInt(this.nextElementSibling.value)  - 1
+                                            }; checkAmount()">
+                                            <div></div>
+                                        </button>
+
+                                        <input id="mochi_amount" name="number" type="number" readonly value="0">
+                                        
+                                        <button onclick="
+                                            if (parseInt(this.previousElementSibling.value) < 30) {
+                                                this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1; 
+                                            }; checkAmount() ">
+                                            <div></div>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 
@@ -96,6 +154,7 @@
                     </ul>
     
                     <div class="bullets">
+
                         <a class="address" href="https://www.google.com/maps/place/Frequently+Asked+Questions/@51.8967255,-1.152985,17z/data=!4m9!1m2!2m1!1sFAQ+%7C+MARKET+SQUARE,+BICESTER,+OX26+6AH!3m5!1s0x4876e77c66e3ffff:0x7836688f70a771f!8m2!3d51.8965607!4d-1.150285!15sCidGQVEgfCBNQVJLRVQgU1FVQVJFLCBCSUNFU1RFUiwgT1gyNiA2QUhaJSIjZmFxIG1hcmtldCBzcXVhcmUgYmljZXN0ZXIgb3gyNiA2YWiSAQNiYXI" target="_blank" rel="external">
                             <div class="place"></div>
                             <span>
@@ -117,6 +176,8 @@
                             </span>
                         </a>
                     </div>
+                    
+                    <div class="go_to_cart" role="button">Go to cart</div>
                 </div>
             </div>
         </div>
