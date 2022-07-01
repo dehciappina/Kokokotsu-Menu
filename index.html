@@ -26,13 +26,122 @@
                 <img src="assets/logo.png" alt="Kokokotsu Logo" draggable="false">
             </picture>
 
-            <aside class="exit_bg"></aside>
+            <aside class="exit_bg" title="back to menu"></aside>
 
             <section class="cart_sec">
                 <div class="neon"></div>
 
                 <div class="content">
+                    <picture class="logo_cart" loading="lazy">
+                        <source srcset="assets/logo.webp" type="image/webp">
+                        <source srcset="assets/logo.png" type="image/png">
+                        <img src="assets/logo.png" alt="Kokokotsu Logo" draggable="false">
+                    </picture>
+        
+                    <article class="order_summary">
+                        <div class="captions">
+                            <div class="column first">Item</div>
+                            <div class="column second">Qt.</div>
+                            <div class="column third">Price</div>
+                        </div>
 
+                        <div class="item">
+                            <div class="item_flex">
+                                <span class="column first">Edamame</span>
+                                <div class="column second edamame_display_amount">0</div>
+                                <div class="column third edamame_display_price">£0</div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="item_flex">
+                                <span class="column first">Gyoza</span>
+                                <div class="column second gyoza_display_amount">0</div>
+                                <div class="column third gyoza_display_price">£0</div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="item_flex">
+                                <span class="column first">Mochi</span>
+                                <div class="column second mochi_display_amount">0</div>
+                                <div class="column third mochi_display_price">£0</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="gyoza_filling_menu">
+                        <p>Choose the filling of your gyozas <b>(0)</b>:</p>
+                        <div class="filling_ctnr">
+                            <div class="filling">
+                                <span>Pork</span>
+                                <div class="quantity">
+                                    <button onclick="
+                                        if (parseInt(this.nextElementSibling.value) > 0) {
+                                            this.nextElementSibling.value = parseInt(this.nextElementSibling.value)  - 1
+                                        }; fillingQuantityCheck()">
+                                        <div></div>
+                                    </button>
+
+                                    <input id="pork_input_amount" name="number" type="number" readonly value="0">
+                                    
+                                    <button onclick="
+                                        if (fillingQuantity < gyozaAmount) {
+                                            this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1; 
+                                        }; fillingQuantityCheck() ">
+                                        <div></div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="filling">
+                                <span>Chicken</span>
+                                <div class="quantity">
+                                    <button onclick="
+                                        if (parseInt(this.nextElementSibling.value) > 0) {
+                                            this.nextElementSibling.value = parseInt(this.nextElementSibling.value)  - 1
+                                        }; fillingQuantityCheck()">
+                                        <div></div>
+                                    </button>
+
+                                    <input id="chicken_input_amount" name="number" type="number" readonly value="0">
+                                    
+                                    <button onclick="
+                                        if (fillingQuantity < gyozaAmount) {
+                                            this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1; 
+                                        }; fillingQuantityCheck() ">
+                                        <div></div>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="filling">
+                                <span>Vegan</span>
+                                <div class="quantity">
+                                    <button onclick="
+                                        if (parseInt(this.nextElementSibling.value) > 0) {
+                                            this.nextElementSibling.value = parseInt(this.nextElementSibling.value)  - 1
+                                        }; fillingQuantityCheck()">
+                                        <div></div>
+                                    </button>
+
+                                    <input id="vegan_input_amount" name="number" type="number" readonly value="0">
+                                    
+                                    <button onclick="
+                                        if (fillingQuantity < gyozaAmount) {
+                                            this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1; 
+                                        }; fillingQuantityCheck() ">
+                                        <div></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article>
+                        <p>Your table:</p>
+                        <select name="table" id="table"></select>
+                    </article>
                 </div>
             </section>
 
@@ -64,7 +173,7 @@
                                             <div></div>
                                         </button>
 
-                                        <input id="edamame_amount" name="number" type="number" readonly value="0">
+                                        <input id="edamame_input_amount" name="number" type="number" readonly value="0">
                                         
                                         <button onclick="
                                             if (parseInt(this.previousElementSibling.value) < 30) {
@@ -97,7 +206,7 @@
                                             <div></div>
                                         </button>
 
-                                        <input id="gyoza_amount" name="number" type="number"  value="0">
+                                        <input id="gyoza_input_amount" name="number" type="number" readonly value="0">
                                         
                                         <button onclick="
                                             if (parseInt(this.previousElementSibling.value) < 30) {
@@ -137,7 +246,7 @@
                                             <div></div>
                                         </button>
 
-                                        <input id="mochi_amount" name="number" type="number" readonly value="0">
+                                        <input id="mochi_input_amount" name="number" type="number" readonly value="0">
                                         
                                         <button onclick="
                                             if (parseInt(this.previousElementSibling.value) < 30) {
@@ -181,7 +290,7 @@
                     </div>
                     
                     <div class="go_to_cart" role="button">
-                        Go to cart
+                        <span class="counter"><b>(0)</b> Go to cart</span>
                         <picture loading="lazy" draggable="false">
                             <source srcset="assets/dumpling.webp" type="image/webp">
                             <source srcset="assets/dumpling.png" type="image/jpeg"> 
