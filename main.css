@@ -357,7 +357,7 @@ html,
     text-align: center;
     background: no-repeat;
     border: none;
-    font-size: clamp(1.1rem, 5vw, 1.2rem);
+    font-size: 1.1rem;
     cursor: default;
     font-weight: 600;
     margin: 0.1rem;

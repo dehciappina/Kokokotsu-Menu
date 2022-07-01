@@ -50,6 +50,11 @@ let fillings = document.querySelectorAll('.gyoza_filling_menu .quantity input')
 const gyozaFillingMenutxt = document.querySelector('.gyoza_filling_menu > p')
 
 function checkCart() {
+
+    porkInputAmount.value = '0'
+    chickenInputAmount.value = '0'
+    veganInputAmount.value = '0'
+    
     if(showingCart == false) {
         cartSection.style.transform = 'translateX(0%)';
         document.body.style.overflow = 'hidden';
@@ -83,8 +88,16 @@ function checkCart() {
 goToCart.addEventListener('click', checkCart)
 exitBG.addEventListener('click', checkCart)
 
-let fillingQuantity = parseInt(document.getElementById('pork_input_amount').value) +  parseInt(document.getElementById('chicken_input_amount').value) +  parseInt(document.getElementById('vegan_input_amount').value);
+let porkInputAmount = document.getElementById('pork_input_amount')
+let chickenInputAmount = document.getElementById('chicken_input_amount')
+let veganInputAmount = document.getElementById('vegan_input_amount')
+
+let fillingQuantity = parseInt(porkInputAmount.value) +  parseInt(chickenInputAmount.value) +  parseInt(veganInputAmount.value);
 
 function fillingQuantityCheck() {
-    fillingQuantity = parseInt(document.getElementById('pork_input_amount').value) +  parseInt(document.getElementById('chicken_input_amount').value) +  parseInt(document.getElementById('vegan_input_amount').value);
+    fillingQuantity = parseInt(porkInputAmount.value) +  parseInt(chickenInputAmount.value) +  parseInt(veganInputAmount.value);
+
+    porkInputAmount = document.getElementById('pork_input_amount')
+    chickenInputAmount = document.getElementById('chicken_input_amount')
+    veganInputAmount = document.getElementById('vegan_input_amount')
 }
