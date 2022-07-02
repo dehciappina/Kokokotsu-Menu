@@ -62,7 +62,7 @@ html,
     max-width: 100%;
   }
   
-  body::-webkit-scrollbar {
+  body::-webkit-scrollbar, .cart_sec > .content::-webkit-scrollbar {
     width: 0.5rem;
   }
   
@@ -507,12 +507,12 @@ select:-webkit-autofill:focus {
   will-change: transform;
 } .cart_sec > .content {
   color:var(--light);
-  width:clamp(12rem, 65vw, 30rem);
   height: 85vh;
   display: flex;
-  width: clamp(12rem, 65vw, 25rem);
+  width: clamp(12rem, 69vw, 25rem);
   flex-direction: column;
   gap: 1.6rem;
+  overflow: auto;
 } .cart_sec .neon {
   left: calc(clamp(0.15rem, 0.8vw, 0.2rem) * -1);
 } .cart_sec .logo_cart {
@@ -619,9 +619,10 @@ select:-webkit-autofill:focus {
 } .gyoza_filling_menu p {
   text-align: center;
   margin: 0 auto clamp(0.9rem, 2vw, 1.2rem) auto;
+  max-width: 50vw;
 } .filling_ctnr {
   display: flex;
-  gap: clamp(0.2rem, 2vw, 1.4rem);
+  gap: clamp(0.2rem, 3vw, 1.6rem);
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -651,6 +652,7 @@ select:-webkit-autofill:focus {
   color: var(--light);
   width: 50%;
   text-transform: capitalize;
+  flex: 1;
 } .result {
   background-color: #ffffff05;
   border-radius: 0.3rem;
