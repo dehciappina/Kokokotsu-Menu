@@ -3,6 +3,10 @@ let edamameAmount;
 let gyozaAmount;
 let mochiAmount;
 
+const edamamePrice = 3;
+const gyozaPrice = 10;
+const mochiPrice = 4;
+
 const goToCart = document.querySelector('.go_to_cart')
 
 const allItems = document.querySelectorAll('.quantity input')
@@ -34,14 +38,17 @@ const cartSection = document.querySelector(".cart_sec")
 const exitBG = document.querySelector(".exit_bg")
 let showingCart = false;
 
-const edamameDisplayAmount = document.querySelector('.edamame_display_amount');
-const edamameDisplayPrice = document.querySelector('.edamame_display_price');
+let edamameDisplayAmount = document.querySelector('.edamame_display_amount');
+let edamameDisplayPrice = document.querySelector('.edamame_display_price');
 
-const gyozaDisplayAmount = document.querySelector('.gyoza_display_amount');
-const gyozaDisplayPrice = document.querySelector('.gyoza_display_price');
+let gyozaDisplayAmount = document.querySelector('.gyoza_display_amount');
+let gyozaDisplayPrice = document.querySelector('.gyoza_display_price');
 
-const mochiDisplayAmount = document.querySelector('.mochi_display_amount');
-const mochiDisplayPrice = document.querySelector('.mochi_display_price');
+let mochiDisplayAmount = document.querySelector('.mochi_display_amount');
+let mochiDisplayPrice = document.querySelector('.mochi_display_price');
+
+let totalDisplayAmount = document.querySelector('.total_display_amount');
+let totalDisplayPrice = document.querySelector('.total_display_price');
 
 const gyozaFillingMenu = document.querySelector('.gyoza_filling_menu');
 
@@ -56,16 +63,22 @@ function checkCart() {
     veganInputAmount.value = '0'
     
     if(showingCart == false) {
-        cartSection.style.transform = 'translateX(0%)';
-        document.body.style.overflow = 'hidden';
+        cartSection.style.transform = 'translate3d(0%, 0%, 0)';
+        setTimeout(() => {
+            document.body.style.overflow = 'hidden';
+        }, 300);
         exitBG.classList.add('showExitBg')
         showingCart = true;
     } else {
-        cartSection.style.transform = 'translateX(100%)';
+        cartSection.style.transform = 'translate3d(100%, 0%, 0)';
         document.body.style.overflow = 'auto';
         exitBG.classList.remove('showExitBg')
         showingCart = false;
     }
+
+    totalDisplayAmount.innerHTML = itemAmount;
+    totalDisplayPrice.innerHTML = `£${(edamameAmount * edamamePrice) + (gyozaAmount * gyozaPrice) + (mochiAmount * mochiPrice)}`
+
 
     if(gyozaAmount > 0) {
         gyozaFillingMenutxt.innerHTML = `Choose the filling of your gyozas <b>(${gyozaAmount})</b>:`

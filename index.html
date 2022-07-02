@@ -68,6 +68,14 @@
                                 <div class="column third mochi_display_price">£0</div>
                             </div>
                         </div>
+
+                        <div class="result">
+                            <div>
+                                <span class="column first">Total</span>
+                                <div class="column second total_display_amount">0</div>
+                                <div class="column third total_display_price">£0</div>
+                            </div>
+                        </div>
                     </article>
 
                     <article class="gyoza_filling_menu">
@@ -138,10 +146,34 @@
                         </div>
                     </article>
 
-                    <article>
-                        <p>Your table:</p>
-                        <select name="table" id="table"></select>
+                    <article class="input_ctnr">
+                        <div class="name_input">
+                            <p>Your name:</p>
+                            <input type="text" name="user_name" id="user_name" maxlength="20" minlength="1">
+                        </div>
+
+                        <div>
+                            <p>Your table (1-8):</p>
+                            <div class="quantity">
+                                <button onclick="
+                                    if (parseInt(this.nextElementSibling.value) > 1) {
+                                        this.nextElementSibling.value = parseInt(this.nextElementSibling.value)  - 1
+                                    }">
+                                    <div></div>
+                                </button>
+    
+                                <input id="table_number" name="number" type="number" readonly value="1">
+                                
+                                <button onclick="
+                                    if (parseInt(this.previousElementSibling.value) < 8) {
+                                        this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1; 
+                                    }">
+                                    <div></div>
+                                </button>
+                            </div>
+                        </div>
                     </article>
+
                 </div>
             </section>
 
