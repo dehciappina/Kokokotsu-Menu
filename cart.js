@@ -81,7 +81,6 @@ function checkCart() {
 
 
     if(gyozaAmount > 0) {
-        gyozaFillingMenutxt.innerHTML = `Choose the filling of your gyozas <b>(${gyozaAmount})</b>:`
         gyozaFillingMenu.style.display = 'block';
     } else {
         gyozaFillingMenu.style.display = 'none';

@@ -171,6 +171,7 @@ html,
 
 .neon:after, .neon:before {
   position: absolute;
+  animation: steam 5s linear infinite;
 }
 
 .neon, .neon:after, .neon:before {
@@ -183,6 +184,7 @@ html,
   pointer-events: none;
 } .neon {
   width: clamp(0.15rem, 0.8vw, 0.2rem);
+  animation: steam 5s linear infinite;
 } .neon:after {
   content: '';
   filter: blur(1.2rem);
@@ -496,28 +498,28 @@ select:-webkit-autofill:focus {
   background-color: var(--dark);
   background-image: url(assets/noise.jpg);
   background-position: center;
-  background-size: 31vh;
+  background-size: clamp(26vh, 16vw, 30vh);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
   will-change: transform;
 } .cart_sec > .content {
-  color:var(--light);
-  height: 85vh;
+  font-size: clamp(0.7rem, 4vw, 0.9rem);
+  color: var(--light);
   display: flex;
   width: clamp(12rem, 66vw, 25rem);
   flex-direction: column;
-  gap: 1.6rem;
+  gap: clamp(1.2rem, 8vw, 2.5rem);
   overflow: auto;
 } .cart_sec .neon {
   left: calc(clamp(0.15rem, 0.8vw, 0.2rem) * -1);
 } .cart_sec .logo_cart {
-  width: clamp(12rem, 62vw, 22rem);
-  margin: 0 auto 1rem;
+  width: 100%;
+  filter: grayscale(1) brightness(3);
 } .go_to_cart {
   position: fixed;
-  bottom: 0.9rem;
+  bottom: 1.2rem;
   left: 0.9rem;
   right: 1.2rem;
   height: clamp(2.5rem, 13vw, 3.5rem);
@@ -592,7 +594,7 @@ select:-webkit-autofill:focus {
   padding: 0.6rem 0 0.6rem 0.6rem;
   box-sizing: border-box;
 } .order_summary .captions div {
-  border-bottom: 0.1rem solid var(--light);
+  border-bottom: 0.1rem dashed var(--light);
 } .order_summary .captions {
   margin-bottom: 1rem;
 } .order_summary .captions, .order_summary .item_flex, .result > div {
@@ -601,36 +603,37 @@ select:-webkit-autofill:focus {
 } .order_summary .column {
 
 } .order_summary .first {
-  width: 30%;
-} .order_summary .second {
-  width: 25%;
-} .order_summary .third {
   width: 35%;
+} .order_summary .second {
+  width: 15%;
+} .order_summary .third {
+  width: 40%;
 } .order_summary .item {
   color: #CCC;
 }
 
 .gyoza_filling_menu {
-  display: none;
-  background-color: #ffffff05;
-  padding: clamp(1.5rem, 3vw, 2rem) 0;
+  padding: clamp(0.5rem, 3vw, 1.4rem) 0;
+  margin: 0.4rem 0 1rem 0;
   border-radius: 0.3rem;
+  background-color: #ffffff05;
 } .gyoza_filling_menu p {
   text-align: center;
   margin: 0 auto clamp(0.9rem, 2vw, 1.2rem) auto;
   max-width: 50vw;
 } .filling_ctnr {
   display: flex;
-  gap: clamp(0.2rem, 3vw, 1.6rem);
-  flex-direction: row;
+  gap: clamp(0.2rem, 1.8vw, 1.6rem);
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  padding: 0 0.2rem;
 } .filling {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap:0.4rem;
+  gap:0.2rem;
 } .filling .quantity input {
   width: 1rem;
 } 
@@ -659,6 +662,15 @@ select:-webkit-autofill:focus {
   border-radius: 0.3rem;
 } 
 
+
+.receipt_generate {
+  padding: 0.8rem 0;
+  border: none;
+  border-radius: 0.3rem;
+  font-weight: 900;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
 
 
 
