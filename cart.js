@@ -66,7 +66,7 @@ function checkCart() {
         cartSection.style.transform = 'translate3d(0%, 0%, 0)';
         setTimeout(() => {
             document.body.style.overflow = 'hidden';
-        }, 300);
+        }, 200);
         exitBG.classList.add('showExitBg')
         showingCart = true;
     } else {

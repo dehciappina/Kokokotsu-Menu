@@ -493,7 +493,7 @@ select:-webkit-autofill:focus {
   bottom: 0;
   width: clamp(15rem, 83vw, 38rem);
   z-index: 3;
-  transition: transform 0.25s cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 0.25s cubic-bezier(0.39, 0.58, 0.57, 1);
   transform: translateX(100%);
   background-color: var(--dark);
   background-image: url(assets/noise.jpg);
@@ -501,7 +501,6 @@ select:-webkit-autofill:focus {
   background-size: clamp(26vh, 16vw, 30vh);
   display: flex;
   justify-content: center;
-  align-items: center;
   font-size: 0.9rem;
   will-change: transform;
 } .cart_sec > .content {
@@ -510,8 +509,11 @@ select:-webkit-autofill:focus {
   display: flex;
   width: clamp(12rem, 66vw, 25rem);
   flex-direction: column;
-  gap: clamp(1.2rem, 8vw, 2.5rem);
+  gap: clamp(1.2rem, 8vw, 2rem);
   overflow: auto;
+  max-height: 85vh;
+  padding-top: clamp(3vh, 12vw, 8.5vh);
+  padding-bottom: 6rem;
 } .cart_sec .neon {
   left: calc(clamp(0.15rem, 0.8vw, 0.2rem) * -1);
 } .cart_sec .logo_cart {
@@ -567,7 +569,7 @@ select:-webkit-autofill:focus {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s linear, visibility 0.2s linear;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
   cursor: alias;
 } .exit_bg.showExitBg {
   opacity: 1;
@@ -665,14 +667,28 @@ select:-webkit-autofill:focus {
 
 .receipt_generate {
   padding: 0.8rem 0;
-  border: none;
+  border: 0.1rem dashed;
   border-radius: 0.3rem;
   font-weight: 900;
   font-size: 0.9rem;
   cursor: pointer;
 }
 
-
+.back_to_menu {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #161616;
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--light);
+  cursor: pointer;
+  transition:background-color 0.4s ease
+} .back_to_menu:hover {
+  background-color:#0a0a0a;
+  transition:background-color 0.05s ease;
+}
 
 
 
@@ -1066,6 +1082,8 @@ select:-webkit-autofill:focus {
     margin: 0 0 12rem;
     height: 3.2rem;
     font-size: 0.9rem;
+  } .cart_sec {
+    transition: transform 0.35s cubic-bezier(0.39, 0.58, 0.57, 1);
   }
 
 
