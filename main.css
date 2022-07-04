@@ -324,7 +324,7 @@ html,
     background-image: url(assets/instagram.svg);
   } .slogan {
     font-size: clamp(1.2rem, 7vw, 1.5rem);
-    font-weight: 600;
+    font-weight: 100;
     text-transform: uppercase;
     background: -webkit-linear-gradient(30deg, #fffc00, #ff9c00, #f000ff,#00baff, #0f6);
     -webkit-background-clip: text;
@@ -1090,8 +1090,7 @@ select:-webkit-autofill:focus {
   }
 
   .slogan {
-    /* left: 9rem;
-    top: 20vh; */
+    font-weight: 600;
   }
   .social_bts a {
     background-color:transparent;
