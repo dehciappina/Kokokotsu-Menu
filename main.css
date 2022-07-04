@@ -669,9 +669,15 @@ select:-webkit-autofill:focus {
   padding: 0.8rem 0;
   border: 0.1rem dashed;
   border-radius: 0.3rem;
-  font-weight: 900;
   font-size: 0.9rem;
   cursor: pointer;
+  border-color: var(--light);
+  color: var(--light);
+  background-color: #0a0a0a;
+  transition:background-color 0.4s ease;
+} .receipt_generate:hover {
+  background-color:#161616;
+  transition:background-color 0.05s ease;
 }
 
 .back_to_menu {
@@ -1084,6 +1090,9 @@ select:-webkit-autofill:focus {
     font-size: 0.9rem;
   } .cart_sec {
     transition: transform 0.35s cubic-bezier(0.39, 0.58, 0.57, 1);
+  } .cart_sec .logo_cart {
+    width: 85%;
+    margin:0 auto;
   }
 
 
