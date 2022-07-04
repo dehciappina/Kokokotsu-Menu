@@ -58,33 +58,20 @@ const gyozaFillingMenutxt = document.querySelector('.gyoza_filling_menu > p')
 
 function checkCart() {
 
-    porkInputAmount.value = '0'
-    chickenInputAmount.value = '0'
-    veganInputAmount.value = '0'
-    
     if(showingCart == false) {
         cartSection.style.transform = 'translate3d(0%, 0%, 0)';
-        setTimeout(() => {
-            document.body.style.overflow = 'hidden';
-        }, 200);
         exitBG.classList.add('showExitBg')
         showingCart = true;
     } else {
         cartSection.style.transform = 'translate3d(100%, 0%, 0)';
-        document.body.style.overflow = 'auto';
         exitBG.classList.remove('showExitBg')
         showingCart = false;
     }
 
     totalDisplayAmount.innerHTML = itemAmount;
-    totalDisplayPrice.innerHTML = `£${(edamameAmount * edamamePrice) + (gyozaAmount * gyozaPrice) + (mochiAmount * mochiPrice)}`
+    totalDisplayPrice.innerHTML = `<p>£${(edamameAmount * edamamePrice) + (gyozaAmount * gyozaPrice) + (mochiAmount * mochiPrice)}</p>`
 
 
-    if(gyozaAmount > 0) {
-        gyozaFillingMenu.style.display = 'block';
-    } else {
-        gyozaFillingMenu.style.display = 'none';
-    }
 
     edamameDisplayAmount.innerHTML = `${edamameAmount}`
     edamameDisplayPrice.innerHTML = `£${edamameAmount * 3}`
@@ -100,16 +87,51 @@ function checkCart() {
 goToCart.addEventListener('click', checkCart)
 exitBG.addEventListener('click', checkCart)
 
-let porkInputAmount = document.getElementById('pork_input_amount')
-let chickenInputAmount = document.getElementById('chicken_input_amount')
-let veganInputAmount = document.getElementById('vegan_input_amount')
+// let porkInputAmount = document.getElementById('pork_input_amount')
+// let chickenInputAmount = document.getElementById('chicken_input_amount')
+// let veganInputAmount = document.getElementById('vegan_input_amount')
 
-let fillingQuantity = parseInt(porkInputAmount.value) +  parseInt(chickenInputAmount.value) +  parseInt(veganInputAmount.value);
+// let fillingQuantity = parseInt(porkInputAmount.value) +  parseInt(chickenInputAmount.value) +  parseInt(veganInputAmount.value);
+
+const gyozaFillingCtnr = document.querySelector('.gyoza_filling_menu .filling_selectors')
+let gyozaFillingSelections = document.querySelectorAll('.gyoza_filling_menu select')
 
 function fillingQuantityCheck() {
-    fillingQuantity = parseInt(porkInputAmount.value) +  parseInt(chickenInputAmount.value) +  parseInt(veganInputAmount.value);
+    if(gyozaAmount > 0) {
+        gyozaFillingMenu.style.opacity = 1;
+    } else {
+        gyozaFillingMenu.style.opacity = 0;
+    }
+}
 
-    porkInputAmount = document.getElementById('pork_input_amount')
-    chickenInputAmount = document.getElementById('chicken_input_amount')
-    veganInputAmount = document.getElementById('vegan_input_amount')
+let fillingCounter = 0;
+
+function addSelection() {
+
+    fillingCounter = fillingCounter + 1;
+
+    gyozaFillingCtnr.innerHTML += `
+        <select name="select_filling_${fillingCounter}">
+            <option value="pork_filling">Pork</option>
+            <option value="chicken-filling">Chicken</option>
+            <option value="vegan_filling">Vegan</option>
+        </select>
+    `
+
+    gyozaFillingSelections = document.querySelector('.gyoza_filling_menu select:last-child');
+}
+
+
+function removeSelection() {
+    fillingCounter = fillingCounter - 1;
+
+    if(gyozaAmount >= 0) {
+        gyozaFillingSelections = document.querySelector('.gyoza_filling_menu select:last-child');
+
+        for(i = 0; i < (gyozaFillingSelections.length - 1); ++i) {
+
+            gyozaFillingSelections.remove()
+
+        }
+    }
 }

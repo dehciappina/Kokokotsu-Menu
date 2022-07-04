@@ -26,7 +26,7 @@
                 <img src="assets/logo.png" alt="Kokokotsu Logo" draggable="false">
             </picture>
 
-            <aside class="exit_bg" title="back to menu"></aside>
+            <aside class="exit_bg" title="Return"></aside>
 
             <section class="cart_sec">
                 <div class="neon"></div>
@@ -59,72 +59,6 @@
                                 <div class="column second gyoza_display_amount">0</div>
                                 <div class="column third gyoza_display_price">£0</div>
                             </div>
-                            <article class="gyoza_filling_menu">
-                                <div class="filling_ctnr">
-                                    <div class="filling">
-                                        <span>Pork</span>
-                                        <div class="quantity">
-                                            <button onclick="
-                                                if (parseInt(this.nextElementSibling.value) > 0) {
-                                                    this.nextElementSibling.value = parseInt(this.nextElementSibling.value)  - 1
-                                                }; fillingQuantityCheck()">
-                                                <div></div>
-                                            </button>
-        
-                                            <input id="pork_input_amount" name="number" type="number" readonly value="0">
-                                            
-                                            <button onclick="
-                                                if (fillingQuantity < gyozaAmount) {
-                                                    this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1; 
-                                                }; fillingQuantityCheck() ">
-                                                <div></div>
-                                            </button>
-                                        </div>
-                                    </div>
-        
-                                    <div class="filling">
-                                        <span>Chicken</span>
-                                        <div class="quantity">
-                                            <button onclick="
-                                                if (parseInt(this.nextElementSibling.value) > 0) {
-                                                    this.nextElementSibling.value = parseInt(this.nextElementSibling.value)  - 1
-                                                }; fillingQuantityCheck()">
-                                                <div></div>
-                                            </button>
-        
-                                            <input id="chicken_input_amount" name="number" type="number" readonly value="0">
-                                            
-                                            <button onclick="
-                                                if (fillingQuantity < gyozaAmount) {
-                                                    this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1; 
-                                                }; fillingQuantityCheck() ">
-                                                <div></div>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="filling">
-                                        <span>Vegan</span>
-                                        <div class="quantity">
-                                            <button onclick="
-                                                if (parseInt(this.nextElementSibling.value) > 0) {
-                                                    this.nextElementSibling.value = parseInt(this.nextElementSibling.value)  - 1
-                                                }; fillingQuantityCheck()">
-                                                <div></div>
-                                            </button>
-        
-                                            <input id="vegan_input_amount" name="number" type="number" readonly value="0">
-                                            
-                                            <button onclick="
-                                                if (fillingQuantity < gyozaAmount) {
-                                                    this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1; 
-                                                }; fillingQuantityCheck() ">
-                                                <div></div>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
                         </div>
 
                         <div class="item">
@@ -139,7 +73,7 @@
                             <div>
                                 <span class="column first">Total</span>
                                 <div class="column second total_display_amount">0</div>
-                                <div class="column third total_display_price">£0</div>
+                                <div class="column third total_display_price"><p>£0</p></div>
                             </div>
                         </div>
                     </article>
@@ -153,23 +87,7 @@
 
                         <div>
                             <p>Table (1-35):</p>
-                            <div class="quantity">
-                                <button onclick="
-                                    if (parseInt(this.nextElementSibling.value) > 1) {
-                                        this.nextElementSibling.value = parseInt(this.nextElementSibling.value)  - 1
-                                    }">
-                                    <div></div>
-                                </button>
-    
-                                <input id="table_number" name="number" type="number" value="1" required max="35">
-                                
-                                <button onclick="
-                                    if (parseInt(this.previousElementSibling.value) < 35) {
-                                        this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1; 
-                                    }">
-                                    <div></div>
-                                </button>
-                            </div>
+                            <input type="number" min="1" max="35">
                         </div>
                     </article>
 
@@ -237,7 +155,7 @@
                                         <button onclick="
                                             if (parseInt(this.nextElementSibling.value) > 0) {
                                                 this.nextElementSibling.value = parseInt(this.nextElementSibling.value)  - 1
-                                            }; checkAmount()">
+                                            }; checkAmount(); fillingQuantityCheck(); removeSelection()">
                                             <div></div>
                                         </button>
 
@@ -246,7 +164,7 @@
                                         <button onclick="
                                             if (parseInt(this.previousElementSibling.value) < 30) {
                                                 this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1; 
-                                            }; checkAmount() ">
+                                            }; checkAmount(); fillingQuantityCheck(); addSelection()">
                                             <div></div>
                                         </button>
                                     </div>
@@ -263,6 +181,20 @@
                                     <li>Vegan</li>
                                 </ul>
                             </sub>
+                            <article class="gyoza_filling_menu">
+                                <h3>
+                                    <picture loading="lazy" draggable="false">
+                                        <source srcset="assets/dumpling.webp" type="image/webp">
+                                        <source srcset="assets/dumpling.png" type="image/jpeg"> 
+                                        <img src="assets/dumpling.png" alt="dumpling emoji">
+                                    </picture>
+                                    Pick your fillings!
+                                </h3>
+
+                                <div class="filling_selectors">
+
+                                </div>
+                            </article>
                         </li>
         
                         <li>
@@ -326,11 +258,6 @@
                     
                     <div class="go_to_cart" role="button">
                         <span class="counter">Go to order <b>(0)</b></span>
-                        <picture loading="lazy" draggable="false">
-                            <source srcset="assets/dumpling.webp" type="image/webp">
-                            <source srcset="assets/dumpling.png" type="image/jpeg"> 
-                            <img src="assets/dumpling.png" alt="dumpling emoji">
-                        </picture>
                     </div>
                 </div>
             </div>
