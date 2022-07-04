@@ -210,7 +210,7 @@ html,
   .logo {
     position: absolute;
     transform: rotate(-90deg) translate(-50%, 150%);
-    width: clamp(40vh, calc(100vw - 23rem), 80vh);
+    width: clamp(53vh, calc(100vw - 23rem), 80vh);
     max-width: unset;
     right: clamp(1.5rem, 10vw, 12rem);
   } .logo img {
@@ -232,7 +232,7 @@ html,
     flex-direction: column;
     gap: clamp(1rem, 5vw, 2rem);
     position: relative;
-    top: clamp(40vh, calc(100vw - 23rem), 80vh);
+    top: clamp(53vh, calc(100vw - 23rem), 80vh);
     z-index: 2;
   } .menu_ctnr {
     list-style: none;
@@ -241,7 +241,7 @@ html,
     color: var(--light);
     line-height: 1;
     margin: 0;
-    padding: 6vh clamp(0rem, 2vw, 3rem) clamp(1rem, 8vw, 1.5rem) clamp(1.5rem, 9vw, 3rem);
+    padding: 7vh clamp(0rem, 2vw, 3rem) clamp(1rem, 8vw, 1.5rem) clamp(1.5rem, 9vw, 3rem);
     margin-left: calc(clamp(1.5rem, 9vw, 3rem) * -1);
     box-sizing: border-box;
     max-width: 38rem;
@@ -437,6 +437,7 @@ html,
     background-attachment: fixed;
     z-index: 3;
     padding: 0.9rem 0 7rem;
+    border-top: 0.1rem solid #161616;
   }
 
   .address, .veg, .job {
@@ -522,8 +523,8 @@ select:-webkit-autofill:focus {
 } .go_to_cart {
   position: fixed;
   bottom: 1.2rem;
-  left: 0.9rem;
-  right: 1.2rem;
+  left: 2.1rem;
+  right: 0;
   height: clamp(2.5rem, 13vw, 3.5rem);
   z-index: 4;
   display: flex;
@@ -532,21 +533,24 @@ select:-webkit-autofill:focus {
   color: var(--light);
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: clamp(0.7rem, 4vw, 1rem);
   font-weight: 100;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   transform: translateY(100%);
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s ease, visibility 0.15s ease, background-color 0.15s ease;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s ease, visibility 0.15s ease, background-color 0.15s ease, box-shadow 0.3s ease;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
   border: 0.1rem solid var(--light);
-  border-radius: 0.4rem;
-  box-shadow: 0 0.2rem var(--light), 0 2rem 2rem var(--dark);
+  border-radius: 0.3rem;
+  box-shadow: 0 0.1rem var(--light), 0 0rem 0 -1rem var(--light), 0 2rem 2rem var(--dark);
   background-image: url(assets/noise.jpg);
   background-position: center;
   background-size: 31vh;
+} .go_to_cart:hover {
+  box-shadow: 0 0.2rem var(--light), 0 0rem 2rem -1rem var(--light), 0 2rem 2rem var(--dark);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s ease, visibility 0.15s ease, background-color 0.15s ease, box-shadow 0.2s ease;
 } .go_to_cart picture {
   width: 1.8rem;
   display: flex;
@@ -555,7 +559,7 @@ select:-webkit-autofill:focus {
 } .go_to_cart:hover {
   background-color: #151515;
 } .go_to_cart.show_go_to_cart {
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s ease, visibility 0.15s ease, background-color 0.15s ease;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s ease, visibility 0.15s ease, background-color 0.15s ease, box-shadow 0.2s ease;
   transform:translateY(0%);
   opacity:1;
   visibility:visible;
@@ -657,12 +661,15 @@ select:-webkit-autofill:focus {
   width: 50%;
   text-transform: capitalize;
   flex: 1;
+  background-color: #0a0a0a;
 } .name_input input::placeholder {
   color:#444;
 } .result {
   background-color: #ffffff05;
   border-radius: 0.3rem;
-} 
+} .total_display_price {
+  border-bottom: 0.1rem dashed var(--light);
+}
 
 
 .receipt_generate {

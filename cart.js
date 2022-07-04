@@ -30,7 +30,7 @@ function checkAmount() {
 
     itemAmount = edamameAmount + gyozaAmount + mochiAmount;
 
-    go_to_cart_amount.innerHTML = `<b>(${itemAmount})</b> Go to cart`
+    go_to_cart_amount.innerHTML = `Go to order <b>(${itemAmount})</b>`
 
 }
 
