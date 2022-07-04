@@ -93,7 +93,7 @@ exitBG.addEventListener('click', checkCart)
 
 // let fillingQuantity = parseInt(porkInputAmount.value) +  parseInt(chickenInputAmount.value) +  parseInt(veganInputAmount.value);
 
-const gyozaFillingCtnr = document.querySelector('.gyoza_filling_menu .filling_selectors')
+const gyozaFillingPrepend = document.querySelector('.gyoza_filling_menu h3')
 let gyozaFillingSelections = document.querySelectorAll('.gyoza_filling_menu select')
 
 function fillingQuantityCheck() {
@@ -110,27 +110,30 @@ function addSelection() {
 
     fillingCounter = fillingCounter + 1;
 
-    gyozaFillingCtnr.innerHTML += `
-        <select name="select_filling_${fillingCounter}">
-            <option value="pork_filling">Pork</option>
-            <option value="chicken-filling">Chicken</option>
-            <option value="vegan_filling">Vegan</option>
-        </select>
-    `
+    gyozaFillingPrepend.insertAdjacentHTML('afterend', `
+    <select name="select_filling_${fillingCounter}">
+        <option value="" disabled selected>...</option>
+        <option value="pork_filling">Pork</option>
+        <option value="chicken-filling">Chicken</option>
+        <option value="vegan_filling">Vegan</option>
+    </select>
+`)
 
-    gyozaFillingSelections = document.querySelector('.gyoza_filling_menu select:last-child');
+    gyozaFillingSelections = document.querySelectorAll('.gyoza_filling_menu select')
 }
 
 
 function removeSelection() {
     fillingCounter = fillingCounter - 1;
+    
+    gyozaFillingSelections = document.querySelectorAll('.gyoza_filling_menu select')
 
     if(gyozaAmount >= 0) {
-        gyozaFillingSelections = document.querySelector('.gyoza_filling_menu select:last-child');
+        gyozaFillingLastSelection = document.querySelector('.gyoza_filling_menu select:first-of-type');
 
-        for(i = 0; i < (gyozaFillingSelections.length - 1); ++i) {
+        for(i = 0; i < gyozaFillingSelections.length; ++i) {
 
-            gyozaFillingSelections.remove()
+            gyozaFillingLastSelection.remove()
 
         }
     }

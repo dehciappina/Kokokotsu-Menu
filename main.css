@@ -612,7 +612,6 @@ select:-webkit-autofill:focus {
 .gyoza_filling_menu {
   position: absolute;
   padding: clamp(0.5rem, 3vw, 1rem) 0.8rem;
-  border-radius: 0.3rem;
   background-color: #ffffff05;
   bottom: 0;
   right: 0;
@@ -622,7 +621,8 @@ select:-webkit-autofill:focus {
   overflow-y: scroll;
   opacity: 0;
   transition: opacity 0.5s ease;
-  border-radius: 0.3rem;
+  padding-left: clamp(0.8rem, 3vw, 2rem);
+  border-left: 0.1rem solid var(--light);
 } .gyoza_filling_menu, .gyoza_filling_menu .selections {
   gap: 0.4rem;
   display: flex;
@@ -672,6 +672,7 @@ select:-webkit-autofill:focus {
   width: 100%;
   text-align: center;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap:0.8rem;
 } .gyoza_filling_menu h3 picture {
@@ -1182,12 +1183,13 @@ select:-webkit-autofill:focus {
     bottom: unset;
     right: -2rem;
     background-color: #0000;
-    max-height: 12rem;
+    max-height: 85%;
     min-width: unset;
-    padding: 0;
+    border-radius: 0;
   } .gyoza_filling_menu h3 {
     font-size: 1.2rem;
     text-align: left;
+    justify-content: left;
   }
 }
 
