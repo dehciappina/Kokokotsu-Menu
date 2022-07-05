@@ -651,20 +651,21 @@ select:-webkit-autofill:focus {
   border: none;
   border-radius: 0.2rem;
   padding: 0 0.2rem;
-  background-color: var(--dark);
-  color: var(--light);
   border: 0.1rem solid #161616;
   padding: 0.2rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: border-color 0.2s ease;
+  font-weight: 600;
 } .gyoza_filling_menu select:hover {
   border-color:var(--light);
   transition: border-color 0.05s ease;
 } .gyoza_filling_menu option {
-  background-color: var(--dark);
+  background-color: var(--light);
+  color: var(--dark);
   border: unset;
   outline: unset;
   border-radius: 0.3rem;
+  font-weight: 400;
 } .gyoza_filling_menu h3 {
   font-size: clamp(0.6rem, 3.3vw, 1.2rem);
   font-weight: 100;
