@@ -388,18 +388,17 @@ html,
     transition: border-color 0s linear;
   } .quantity button div {
     transition: border-color 0.2s ease;
-    border-radius: 0.3rem;
-    width: 78%;
-    height: 78%;
+    border-radius: 0.2rem;
+    width: 80%;
+    height: 80%;
     background-color: var(--light);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     background-position: center;
-    background-size: clamp(0.4rem, 3vw, 0.5rem);
+    background-size: clamp(0.4rem, 3vw, 0.6rem);
     background-repeat: no-repeat;
-    border: 0.2rem solid #CCC;
   } .quantity button:first-child div {
     background-image: url(assets/dec.svg);
   } .quantity button:last-child div {
@@ -514,7 +513,7 @@ select:-webkit-autofill:focus {
   display: flex;
   width: clamp(12rem, 80%, 25rem);
   flex-direction: column;
-  gap: clamp(1.2rem, 5vh, 3rem);
+  gap: clamp(1.2rem, 5vh, 2rem);
   margin-top: 6vh;
   padding: 0 5% 0;
   overflow-y: auto;
@@ -649,7 +648,7 @@ select:-webkit-autofill:focus {
   border: none;
   border-radius: 0.2rem;
   padding: 0 0.2rem;
-  border: 0.1rem solid #CCC;
+  border: 0.0625rem solid #CCC;
   padding: clamp(0.05rem, 0.4vw, 0.2rem) 0.1rem;
   font-size: clamp(0.7rem, 3.3vw, 0.85rem);
   transition: border-color 0.2s ease;
@@ -694,7 +693,7 @@ select:-webkit-autofill:focus {
   align-items: center;
 } .input_ctnr input {
   font-size: clamp(0.7rem, 3.5vw, 0.9rem);
-  border: 1px solid #CCC;
+  border: 0.0625rem solid #CCC;
   padding: clamp(0.2rem, 1.8vw, 0.4rem) 0.6rem;
   color: var(--light);
   width: 50%;
