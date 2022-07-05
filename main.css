@@ -494,7 +494,8 @@ select:-webkit-autofill:focus {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 96%;
+  width: calc(100% - clamp(0.15rem, 0.8vw, 0.2rem));
+  max-width: 37rem;
   z-index: 3;
   transition: transform 0.35s cubic-bezier(0.39, 0.58, 0.57, 1);
   transform: translateX(100%);
@@ -508,13 +509,17 @@ select:-webkit-autofill:focus {
   justify-content: space-between;
   font-size: 0.9rem;
 } .cart_sec > .content {
-  font-size: clamp(0.7rem, 3.3vw, 0.9rem);
+  font-size: clamp(0.7rem, 3.3vw, 0.95rem);
   color: var(--light);
   display: flex;
   width: clamp(12rem, 80%, 25rem);
   flex-direction: column;
-  gap: clamp(1.2rem, 7vw, 5vh);
-  margin-top: 8vh;
+  gap: clamp(1.2rem, 5vh, 3rem);
+  margin-top: 6vh;
+  padding: 0 5% 0;
+  overflow-y: auto;
+  height: 100%;
+  height: -webkit-fill-available;
 } .cart_sec .neon {
   left: calc(clamp(0.15rem, 0.8vw, 0.2rem) * -1);
   pointer-events: none;
@@ -689,13 +694,13 @@ select:-webkit-autofill:focus {
   align-items: center;
 } .input_ctnr input {
   font-size: clamp(0.7rem, 3.5vw, 0.9rem);
-  border: 0.1rem solid #CCC;
+  border: 1px solid #CCC;
   padding: clamp(0.2rem, 1.8vw, 0.4rem) 0.6rem;
   color: var(--light);
   width: 50%;
   text-transform: capitalize;
   flex: 1;
-  background-color: #0000;
+  background-color: #ffffff05;
   border-radius: 0.2rem;
   font-weight: 400;
 } .input_ctnr input::placeholder {
@@ -722,7 +727,7 @@ select:-webkit-autofill:focus {
   position: relative;
   border-radius: 0.3rem;
   border: none;
-  margin: 0.6rem 0 0 0;
+  margin: 2vh 0 0 0;
 } .receipt_generate:hover {
   background-color:#101010;
   transition:background-color 0.05s ease;
@@ -766,9 +771,7 @@ select:-webkit-autofill:focus {
   display: flex;
   justify-content: center;
   gap: 2rem;
-} .back_to_menu:hover {
   background-color:#101010;
-  transition:background-color 0.05s ease;
 } .back_to_menu div {
   display: flex;
   gap:0.3rem;
@@ -1178,6 +1181,11 @@ select:-webkit-autofill:focus {
   } .cart_sec .logo_cart {
     width: 91%;
     margin:0 auto;
+  } .back_to_menu {
+    background-color:transparent;
+  } .back_to_menu:hover {
+    background-color:#101010;
+    transition:background-color 0.05s ease;
   }
 }
 
