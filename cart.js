@@ -30,7 +30,7 @@ function checkAmount() {
 
     itemAmount = edamameAmount + gyozaAmount + mochiAmount;
 
-    go_to_cart_amount.innerHTML = `Go to order <b>(${itemAmount})</b>`
+    go_to_cart_amount.innerHTML = `Your order <b>(${itemAmount})</b>`
 
 }
 
@@ -81,6 +81,14 @@ function checkCart() {
 
     mochiDisplayAmount.innerHTML = `${mochiAmount}`
     mochiDisplayPrice.innerHTML = `£${mochiAmount * 4}`
+
+    if(gyozaAmount > 0) {
+        setTimeout(() => {
+            gyozaFillingPrepend.style.maxHeight = '13vh';
+        }, 600);
+    } else {
+        gyozaFillingPrepend.style.maxHeight = '5vh';
+    }
 }
 
 
@@ -93,14 +101,15 @@ exitBG.addEventListener('click', checkCart)
 
 // let fillingQuantity = parseInt(porkInputAmount.value) +  parseInt(chickenInputAmount.value) +  parseInt(veganInputAmount.value);
 
-const gyozaFillingPrepend = document.querySelector('.gyoza_filling_menu h3')
+const gyozaFillingPrepend = document.querySelector('.gyoza_filling_menu')
 let gyozaFillingSelections = document.querySelectorAll('.gyoza_filling_menu select')
+const emptySign = document.querySelector('.empty_sign')
 
 function fillingQuantityCheck() {
     if(gyozaAmount > 0) {
-        gyozaFillingMenu.style.opacity = 1;
+        emptySign.style.display = 'none';
     } else {
-        gyozaFillingMenu.style.opacity = 0;
+        emptySign.style.display = 'block';
     }
 }
 
@@ -110,9 +119,9 @@ function addSelection() {
 
     fillingCounter = fillingCounter + 1;
 
-    gyozaFillingPrepend.insertAdjacentHTML('afterend', `
+    gyozaFillingPrepend.insertAdjacentHTML('beforeend', `
     <select name="select_filling_${fillingCounter}">
-        <option value="" disabled selected>...</option>
+        <option value="" disabled selected>Select</option>
         <option value="pork_filling">Pork</option>
         <option value="chicken-filling">Chicken</option>
         <option value="vegan_filling">Vegan</option>
