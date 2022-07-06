@@ -389,8 +389,8 @@ html,
   } .quantity button div {
     transition: border-color 0.2s ease;
     border-radius: 0.2rem;
-    width: 80%;
-    height: 80%;
+    width: 85%;
+    height: 85%;
     background-color: var(--light);
     display: flex;
     justify-content: center;
