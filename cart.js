@@ -55,8 +55,10 @@ function checkAmount() {
     
     if(gyozaAmount > 0) {
         gyozaRemoveItem.style.display = 'block';
+        emptySign.style.display = 'none';
     } else {
         gyozaRemoveItem.style.display = 'none';
+        emptySign.style.display = 'block'
     }
 
     if(mochiAmount > 0) {
