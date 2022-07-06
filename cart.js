@@ -106,9 +106,7 @@ function checkCart() {
         exitBG.classList.remove('showExitBg')
         showingCart = false;
 
-        setTimeout(() => {
-            document.body.style.overflow = 'block'
-        }, 300);
+        document.body.style.overflow = 'auto'
     }
 }
 
