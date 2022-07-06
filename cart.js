@@ -32,6 +32,39 @@ function checkAmount() {
 
     go_to_cart_amount.innerHTML = `Your order <b>(${itemAmount})</b>`
 
+    totalDisplayAmount.innerHTML = itemAmount;
+    totalDisplayPrice.innerHTML = `<p>£${(edamameAmount * edamamePrice) + (gyozaAmount * gyozaPrice) + (mochiAmount * mochiPrice)}</p>`
+
+    edamameDisplayAmount.innerHTML = `${edamameAmount}`
+    edamameDisplayPrice.innerHTML = `£${edamameAmount * 3}`
+
+    gyozaDisplayAmount.innerHTML = `${gyozaAmount}`
+    gyozaDisplayPrice.innerHTML = `£${gyozaAmount * 10}`
+
+    mochiDisplayAmount.innerHTML = `${mochiAmount}`
+    mochiDisplayPrice.innerHTML = `£${mochiAmount * 4}`
+
+
+
+
+    if(edamameAmount > 0) {
+        edamameRemoveItem.style.display = 'block';
+    } else {
+        edamameRemoveItem.style.display = 'none';
+    }
+    
+    if(gyozaAmount > 0) {
+        gyozaRemoveItem.style.display = 'block';
+    } else {
+        gyozaRemoveItem.style.display = 'none';
+    }
+
+    if(mochiAmount > 0) {
+        mochiRemoveItem.style.display = 'block';
+    } else {
+        mochiRemoveItem.style.display = 'none';
+    }
+
 }
 
 const cartSection = document.querySelector(".cart_sec")
@@ -59,59 +92,32 @@ const gyozaFillingMenutxt = document.querySelector('.gyoza_filling_menu > p')
 function checkCart() {
 
     if(showingCart == false) {
+        // history.pushState('sessionStorage', 'unused', 'menu')
         cartSection.style.transform = 'translate3d(0%, 0%, 0)';
         exitBG.classList.add('showExitBg')
         showingCart = true;
+
+        setTimeout(() => {
+            document.body.style.overflow = 'hidden'
+        }, 300);
     } else {
+        // history.pushState('sessionStorage', 'unused', 'index.html')
         cartSection.style.transform = 'translate3d(100%, 0%, 0)';
         exitBG.classList.remove('showExitBg')
         showingCart = false;
-    }
 
-    totalDisplayAmount.innerHTML = itemAmount;
-    totalDisplayPrice.innerHTML = `<p>£${(edamameAmount * edamamePrice) + (gyozaAmount * gyozaPrice) + (mochiAmount * mochiPrice)}</p>`
-
-
-
-    edamameDisplayAmount.innerHTML = `${edamameAmount}`
-    edamameDisplayPrice.innerHTML = `£${edamameAmount * 3}`
-
-    gyozaDisplayAmount.innerHTML = `${gyozaAmount}`
-    gyozaDisplayPrice.innerHTML = `£${gyozaAmount * 10}`
-
-    mochiDisplayAmount.innerHTML = `${mochiAmount}`
-    mochiDisplayPrice.innerHTML = `£${mochiAmount * 4}`
-
-    if(gyozaAmount > 0) {
         setTimeout(() => {
-            gyozaFillingPrepend.style.maxHeight = '13vh';
-        }, 600);
-    } else {
-        gyozaFillingPrepend.style.maxHeight = '5vh';
+            document.body.style.overflow = 'block'
+        }, 300);
     }
 }
-
 
 goToCart.addEventListener('click', checkCart)
 exitBG.addEventListener('click', checkCart)
 
-// let porkInputAmount = document.getElementById('pork_input_amount')
-// let chickenInputAmount = document.getElementById('chicken_input_amount')
-// let veganInputAmount = document.getElementById('vegan_input_amount')
-
-// let fillingQuantity = parseInt(porkInputAmount.value) +  parseInt(chickenInputAmount.value) +  parseInt(veganInputAmount.value);
-
 const gyozaFillingPrepend = document.querySelector('.gyoza_filling_menu')
 let gyozaFillingSelections = document.querySelectorAll('.gyoza_filling_menu select')
 const emptySign = document.querySelector('.empty_sign')
-
-function fillingQuantityCheck() {
-    if(gyozaAmount > 0) {
-        emptySign.style.display = 'none';
-    } else {
-        emptySign.style.display = 'block';
-    }
-}
 
 let fillingCounter = 0;
 
@@ -121,15 +127,22 @@ function addSelection() {
 
     gyozaFillingPrepend.insertAdjacentHTML('beforeend', `
     <select name="select_filling_${fillingCounter}">
-        <option value="" disabled selected>Select</option>
+        <option value="" disabled selected>...</option>
         <option value="pork_filling">Pork</option>
         <option value="chicken-filling">Chicken</option>
         <option value="vegan_filling">Vegan</option>
     </select>
 `)
-
-    gyozaFillingSelections = document.querySelectorAll('.gyoza_filling_menu select')
 }
+
+let removeBts = document.querySelectorAll('.remove_bt')
+
+for(i = 0; i < removeBts.length; ++i) {
+    removeBts[i].addEventListener('click', function() {
+        removeBts[i].parentElement.remove()
+    })
+}
+
 
 
 function removeSelection() {
@@ -146,4 +159,55 @@ function removeSelection() {
 
         }
     }
+}
+
+
+
+const edamameRemoveItem = document.querySelector('.remove_item.edamame')
+const gyozaRemoveItem = document.querySelector('.remove_item.gyoza')
+const mochiRemoveItem = document.querySelector('.remove_item.mochi')
+
+
+
+
+function subtractEdamame() {
+
+    if(edamameAmount > 1) {
+        edamameRemoveItem.style.display = 'block';
+    } else {
+        edamameRemoveItem.style.display = 'none';
+    }
+
+    document.getElementById('edamame_input_amount').value = parseInt(document.getElementById('edamame_input_amount').value) - 1;
+
+    checkAmount()
+}
+
+function subtractGyoza() {
+
+    if(gyozaAmount > 1) {
+        gyozaRemoveItem.style.display = 'block';
+    } else {
+        gyozaRemoveItem.style.display = 'none';
+    }
+
+    removeSelection()
+
+    document.getElementById('gyoza_input_amount').value = parseInt(document.getElementById('gyoza_input_amount').value) - 1;
+
+    checkAmount()
+}
+
+function subtractMochi() {
+
+
+    if(mochiAmount > 1) {
+        mochiRemoveItem.style.display = 'block';
+    } else {
+        mochiRemoveItem.style.display = 'none';
+    }
+
+    document.getElementById('mochi_input_amount').value = parseInt(document.getElementById('mochi_input_amount').value) - 1;
+
+    checkAmount()
 }

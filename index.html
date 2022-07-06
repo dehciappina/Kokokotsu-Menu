@@ -48,7 +48,12 @@
 
                         <div class="item">
                             <div class="item_flex">
-                                <span class="column first">Edamame</span>
+                                <span class="column first">
+                                    <button class="remove_item edamame" onclick="subtractEdamame();" title="Remove item">
+                                        <div></div>
+                                    </button>
+                                    Edamame
+                                </span>
                                 <div class="column second edamame_display_amount">0</div>
                                 <div class="column third edamame_display_price">£0</div>
                                 <div class="column fourth">-</div>
@@ -57,7 +62,12 @@
 
                         <div class="item">
                             <div class="item_flex">
-                                <span class="column first">Gyoza</span>
+                                <span class="column first">
+                                    <button class="remove_item gyoza" onclick="subtractGyoza();" title="Remove item">
+                                        <div></div>
+                                    </button>
+                                    Gyoza
+                                </span>
                                 <div class="column second gyoza_display_amount">0</div>
                                 <div class="column third gyoza_display_price">£0</div>
                                 <div class="column fourth gyoza_filling_menu"><span class="empty_sign">-</span></div>
@@ -66,7 +76,12 @@
 
                         <div class="item">
                             <div class="item_flex">
-                                <span class="column first">Mochi</span>
+                                <span class="column first">
+                                    <button class="remove_item mochi" onclick="subtractMochi();" title="Remove item">
+                                        <div></div>
+                                    </button>
+                                    Mochi
+                                </span>
                                 <div class="column second mochi_display_amount">0</div>
                                 <div class="column third mochi_display_price">£0</div>
                                 <div class="column fourth">-</div>
@@ -98,19 +113,23 @@
 
                     <button type="submit" class="receipt_generate">Generate receipt!</button>
 
+                    <div role="button" class="clear_cart">clear cart</div>
                 </div>
 
-                <div class="back_to_menu" role="button" onclick="checkCart()">
-                    <div>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    Back to menu
-                    <div>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                <div class="checkout_footer">
+
+                    <div class="back_to_menu" role="button" onclick="checkCart()">
+                        <div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        Back to menu
+                        <div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -182,7 +201,7 @@
                                         <button onclick="
                                             if (parseInt(this.nextElementSibling.value) > 0) {
                                                 this.nextElementSibling.value = parseInt(this.nextElementSibling.value)  - 1
-                                            }; checkAmount(); fillingQuantityCheck(); removeSelection()">
+                                            }; checkAmount(); removeSelection()">
                                             <div></div>
                                         </button>
 
@@ -191,7 +210,7 @@
                                         <button onclick="
                                             if (parseInt(this.previousElementSibling.value) < 30) {
                                                 this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1; 
-                                            }; checkAmount(); fillingQuantityCheck(); addSelection()">
+                                            }; checkAmount(); addSelection()">
                                             <div></div>
                                         </button>
                                     </div>
