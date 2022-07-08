@@ -70,7 +70,6 @@ function checkAmount() {
 }
 
 const cartSection = document.querySelector(".cart_sec")
-const exitBG = document.querySelector(".exit_bg")
 let showingCart = false;
 
 let edamameDisplayAmount = document.querySelector('.edamame_display_amount');
@@ -96,24 +95,15 @@ function checkCart() {
     if(showingCart == false) {
         // history.pushState('sessionStorage', 'unused', 'menu')
         cartSection.style.transform = 'translate3d(0%, 0%, 0)';
-        exitBG.classList.add('showExitBg')
         showingCart = true;
-
-        setTimeout(() => {
-            document.body.style.overflow = 'hidden'
-        }, 300);
     } else {
         // history.pushState('sessionStorage', 'unused', 'index.html')
         cartSection.style.transform = 'translate3d(100%, 0%, 0)';
-        exitBG.classList.remove('showExitBg')
         showingCart = false;
-
-        document.body.style.overflow = 'auto'
     }
 }
 
 goToCart.addEventListener('click', checkCart)
-exitBG.addEventListener('click', checkCart)
 
 const gyozaFillingPrepend = document.querySelector('.gyoza_filling_menu')
 let gyozaFillingSelections = document.querySelectorAll('.gyoza_filling_menu select')
