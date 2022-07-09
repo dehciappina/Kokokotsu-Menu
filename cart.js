@@ -14,6 +14,9 @@ let itemAmount;
 const go_to_cart_amount = document.querySelector('.go_to_cart .counter')
 
 function checkAmount() {
+
+    gyozaFillingSelections = document.querySelectorAll('.gyoza_filling_menu select')
+
     edamameAmount = parseInt(document.getElementById('edamame_input_amount').value);
     gyozaAmount = parseInt(document.getElementById('gyoza_input_amount').value);
     mochiAmount = parseInt(document.getElementById('mochi_input_amount').value);
@@ -138,7 +141,6 @@ for(i = 0; i < removeBts.length; ++i) {
 function removeSelection() {
     fillingCounter = fillingCounter - 1;
     
-    gyozaFillingSelections = document.querySelectorAll('.gyoza_filling_menu select')
 
     if(gyozaAmount >= 0) {
         gyozaFillingLastSelection = document.querySelector('.gyoza_filling_menu select:first-of-type');
@@ -201,3 +203,22 @@ function subtractMochi() {
 
     checkAmount()
 }
+
+
+const clearCartBt = document.querySelector('.clear_cart')
+
+clearCartBt.addEventListener('click', function() {
+
+    document.getElementById('mochi_input_amount').value = 0;
+    document.getElementById('gyoza_input_amount').value = 0;
+    document.getElementById('edamame_input_amount').value = 0;
+
+    checkAmount()
+    
+    gyozaFillingSelections = document.querySelectorAll('.gyoza_filling_menu select')
+
+    for(i = 0; i < gyozaFillingSelections.length; ++i) {
+        gyozaFillingSelections[i].remove()
+
+    }
+})
