@@ -514,7 +514,7 @@ select:-webkit-autofill:focus {
   width: 100%;
   flex-direction: column;
   gap: clamp(1.2rem, 5vh, 2rem);
-  padding: 4rem clamp(2rem, 12vw, 4.5rem) 2rem;
+  padding: 4rem clamp(2rem, 12vw, 5rem) 2rem;
   overflow-y: auto;
   height: 100%;
   box-sizing: border-box;
@@ -743,7 +743,7 @@ select:-webkit-autofill:focus {
 }
 
 .column p {
-  animation: price_highlight 0.6s ease;
+  animation: price_highlight 0.8s ease;
 }
 
 @keyframes price_highlight {
@@ -1253,7 +1253,7 @@ select:-webkit-autofill:focus {
     height: 3.2rem;
     font-size: 0.9rem;
   } .cart_sec {
-    width: clamp(15rem, 83vw, 34rem);
+    width: clamp(15rem, 83vw, 36rem);
     transition: transform 0.45s cubic-bezier(0.39, 0.58, 0.57, 1);
   } .cart_sec .logo_cart {
     width: 91%;
