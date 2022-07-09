@@ -145,7 +145,8 @@ function removeSelection() {
     if(gyozaAmount >= 0) {
         gyozaFillingLastSelection = document.querySelector('.gyoza_filling_menu select:first-of-type');
 
-        for(i = 0; i < gyozaFillingSelections.length; ++i) {
+        for(i = -1; i < gyozaFillingSelections.length; ++i) {
+            console.log('a')
 
             gyozaFillingLastSelection.remove()
 
