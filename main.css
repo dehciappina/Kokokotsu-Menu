@@ -825,12 +825,12 @@ select:-webkit-autofill:focus {
   cursor: pointer;
   user-select: none;
 } .clear_cart {
-  width: 38%;
+  width: 25%;
   border-left: 0.0625rem solid #161616;
   background-color:#0c0c0c;
 } .back_to_menu {
   background-color: #0000;
-  width: 62%;
+  width: 75%;
   color: var(--light);
   gap: clamp(0.6rem, 5vw, 1.8rem);
 } .back_to_menu:hover, .clear_cart:hover {
