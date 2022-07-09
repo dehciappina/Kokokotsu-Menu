@@ -550,6 +550,7 @@ select:-webkit-autofill:focus {
   background-image: url(assets/noise.jpg);
   background-position: center;
   background-size: 31vh;
+  user-select: none;
 } .go_to_cart:hover {
   box-shadow: 0 0.2rem var(--light), 0 0rem 2rem -1rem var(--light), 0 2rem 2rem var(--dark);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s ease, visibility 0.15s ease, background-color 0.15s ease, box-shadow 0.2s ease;
@@ -807,6 +808,8 @@ select:-webkit-autofill:focus {
   flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 1rem 1rem rgb(10 7 11 / 80%);
+  z-index: 2;
 } .back_to_menu, .clear_cart {
   display: flex;
   justify-content: center;
