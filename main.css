@@ -375,7 +375,7 @@ html,
     background-attachment: fixed;
     z-index: 3;
     padding: 1.2rem 0 3rem;
-    box-shadow: 0 0rem 1rem 2rem var(--dark);
+    /* box-shadow: 0 0rem 1rem 2rem var(--dark); */
   }
 
   .address, .veg, .job {
@@ -724,7 +724,7 @@ select:-webkit-autofill:focus {
   user-select: none;
   width: min-content;
   font-weight: 600;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
@@ -734,8 +734,11 @@ select:-webkit-autofill:focus {
   margin-bottom: 3rem;
   font-weight: 900;
   position: relative;
-  background-color: #0a070bfa;
+  background-color: var(--dark);
   border-radius: 0.3rem;
+  background-image: url(assets/noise.jpg);
+  background-position: center;
+  background-size: 31vh;
 } .menu_ctnr > li.combo_li > div {
   flex-direction: column;
   justify-content: center;
@@ -769,9 +772,6 @@ select:-webkit-autofill:focus {
   font-weight: 600;
 }
 
-.menu_ctnr h2 {
-  /* max-width: 62%; */
-}
 
 @keyframes steam2 {
 	0% {
@@ -784,7 +784,8 @@ select:-webkit-autofill:focus {
 
 .wines_ctnr h2 {
   line-height: 1.4;
-  max-width: 45vw;
+  max-width: 41vw;
+  font-size: 1.3rem;
 }
 
 
@@ -866,7 +867,7 @@ select:-webkit-autofill:focus {
     position: relative;
     bottom: unset;
     padding: 3rem 0 5rem;
-    box-shadow: unset;
+    /* box-shadow: unset; */
   }
 
   .slogan {
@@ -934,7 +935,6 @@ select:-webkit-autofill:focus {
 
   .menu_ctnr > li.combo_li {
     padding:1rem 2rem;
-    margin: 3rem 0;
   } .menu_ctnr > li.combo_li > div {
     flex-direction: row;
   } .combo_li .price {
