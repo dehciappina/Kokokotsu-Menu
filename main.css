@@ -785,6 +785,7 @@ select:-webkit-autofill:focus {
 .wines_ctnr h2 {
   line-height: 1.4;
   max-width: 41vw;
+} .wines_ctnr h2, .wines_ctnr .price {
   font-size: 1.3rem;
 }
 
