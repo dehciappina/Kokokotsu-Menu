@@ -213,9 +213,10 @@ html,
     transform: rotate(-90deg) translate(-50%, 150%);
     width: clamp(45vh, calc(100vw - 23rem), 80vh);
     max-width: unset;
-    right: clamp(1.5rem, 10vw, 12rem);
+    right: clamp(1.5rem, 8vw, 10rem);
   } .logo img {
     display: flex;
+    width: 100%;
   }
 
   .left_ctnr {
@@ -233,7 +234,7 @@ html,
     flex-direction: column;
     gap: clamp(1rem, 5vw, 2rem);
     position: relative;
-    top: clamp(45vh, calc(100vw - 23rem), 80vh);
+    top: clamp(14rem, calc(100vw - 23rem), 33vh);
     z-index: 2;
   } .menu_ctnr {
     list-style: none;
@@ -242,7 +243,7 @@ html,
     color: var(--light);
     line-height: 1;
     margin: 0;
-    padding: 6vh clamp(0rem, 2vw, 3rem) clamp(1rem, 8vw, 1.5rem) clamp(1.5rem, 9vw, 3rem);
+    padding: 0 clamp(0rem, 2vw, 3rem) clamp(1rem, 8vw, 1.5rem) clamp(1.5rem, 9vw, 3rem);
     margin-left: calc(clamp(1.5rem, 9vw, 3rem) * -1);
     box-sizing: border-box;
     max-width: 38rem;
@@ -257,14 +258,14 @@ html,
     gap: clamp(0.2rem, 1.5vw, 0.6rem);
     align-items: stretch;
   } .menu_ctnr > li:not(:last-child) {
-    margin-bottom: clamp(1.4rem, 9vw, 2rem);
+    margin-bottom: clamp(1.4rem, 12vw, 4rem);
   }  .menu_ctnr > li > div {
     display: flex;
     gap: clamp(0.6rem, 1vw, 0.9rem);
     align-items: baseline;
   } .menu_ctnr h2, .menu_ctnr .price {
     font-weight: 100;
-    font-size: clamp(1.1rem, 5.5vw, 1.6rem);
+    font-size: clamp(1.1rem, 5.5vw, 1.4rem);
   } .menu_ctnr > .divider {
     width: 100%;
     margin: clamp(3rem, 4vw, 3.5rem) 0;
@@ -714,7 +715,7 @@ select:-webkit-autofill:focus {
   list-style: katakana;
 } .drinks_ctnr h3 {
   font-weight: 100;
-  font-size: clamp(1.1rem, 5vw, 1.2rem);
+  font-size: clamp(1.1rem, 5vw, 1.1rem);
 } .drinks_ctnr p {
   padding: 0.5rem 0 0 0.9rem;
 } .drinks_ctnr .highlight {
@@ -724,13 +725,14 @@ select:-webkit-autofill:focus {
   user-select: none;
   width: min-content;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
 
 .menu_ctnr > li.combo_li {
-  padding: 1.2rem 2rem;
+  padding: 1.4rem 0.8rem;
+  box-sizing: border-box;
   margin-bottom: 3rem;
   font-weight: 900;
   position: relative;
@@ -739,12 +741,13 @@ select:-webkit-autofill:focus {
   background-image: url(assets/noise.jpg);
   background-position: center;
   background-size: 31vh;
+  width: clamp(8rem, 42vw, 16rem);
 } .menu_ctnr > li.combo_li > div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
 } .combo_li h2 {
-  font-size: 1.3rem;
+  font-size: clamp(0.9rem, 4vw, 1.1rem);
   line-height: 1.6;
   text-align: center;
 } .combo_li::before, .combo_li::after {
@@ -770,6 +773,7 @@ select:-webkit-autofill:focus {
   user-select: none;
   font-size: 2rem;
   font-weight: 600;
+  line-height: 1.2;
 }
 
 
@@ -788,6 +792,10 @@ select:-webkit-autofill:focus {
 } .wines_ctnr h2, .wines_ctnr .price {
   font-size: 1.3rem;
 }
+
+.menu_ctnr > li:not(:last-child) {
+  margin-bottom: clamp(1.4rem, 9vw, 2.5rem);
+} 
 
 
 /* END FAQ DRINKS UPDATE */
@@ -848,13 +856,14 @@ select:-webkit-autofill:focus {
   }
   
   .left_ctnr {
-    left: clamp(1.5rem, 10vw, 12rem);
+    left: clamp(1.5rem, 8vw, 12rem);
     top: 5rem;
     bottom: 5rem;
   }
   
   .logo {
     position: fixed;
+    width: 80vh;
   } .slogan_ctnr {
     position: relative;
   }
@@ -904,6 +913,7 @@ select:-webkit-autofill:focus {
   } .menu_address_ctnr {
     max-height: unset;
     top: 2rem;
+    width: clamp(29rem, 40vw, 41rem);
   }
 
 
@@ -935,17 +945,22 @@ select:-webkit-autofill:focus {
   /* FAQ DRINKS UPDATE */
 
   .menu_ctnr > li.combo_li {
-    padding:1rem 2rem;
+    padding: 1rem 2rem;
+    width: 18rem;
+    position: absolute;
+    top: -13rem;
+    right: 1rem;
+    margin: 0;
   } .menu_ctnr > li.combo_li > div {
     flex-direction: row;
   } .combo_li .price {
     font-size: 1.5rem;
   }
 
-
   /* END FAQ DRINKS UPDATE */
 
 
+  
 }
 
 
@@ -954,6 +969,31 @@ select:-webkit-autofill:focus {
 
 
 
+@media (orientation:landscape) and (min-width:1200px) {
+
+
+  .drinks_ctnr {
+    position: fixed;
+    top: 5rem;
+    left: calc(clamp(29rem, 40vw, 41rem) + clamp(1.5rem, 8vw, 12rem) + 2rem);
+    width: clamp(18rem, calc(50vw - 28rem), 50rem);
+    padding: 2.4rem clamp(1.2rem, 2vw, 1.9rem);
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    border: 0.0625rem solid #131313;
+    background-image: url(assets/noise.jpg);
+    background-position: center;
+    background-size: 31vh;
+    box-shadow: 0 1rem 1.5rem -0.9rem #000;
+  } .drinks_ctnr .divider {
+    display: none;
+  }
+
+  .deal_divider {
+    display: none;
+  }
+
+}
 
 
 
