@@ -62,7 +62,7 @@ html,
     max-width: 100%;
   }
   
-  body::-webkit-scrollbar {
+  body::-webkit-scrollbar, .drinks_ctnr::-webkit-scrollbar {
     width: 0.4rem;
   }
   
@@ -211,9 +211,10 @@ html,
   .logo {
     position: absolute;
     transform: rotate(-90deg) translate(-50%, 150%);
-    width: clamp(45vh, calc(100vw - 23rem), 80vh);
+    width: clamp(45vh, 90vw, 30rem);
     max-width: unset;
     right: clamp(1.5rem, 8vw, 10rem);
+    z-index: 3;
   } .logo img {
     display: flex;
     width: 100%;
@@ -234,7 +235,7 @@ html,
     flex-direction: column;
     gap: clamp(1rem, 5vw, 2rem);
     position: relative;
-    top: clamp(14rem, calc(100vw - 23rem), 33vh);
+    top: clamp(14rem, calc(100vw - 23rem), 27vh);
     z-index: 2;
   } .menu_ctnr {
     list-style: none;
@@ -261,8 +262,9 @@ html,
     margin-bottom: clamp(1.4rem, 12vw, 4rem);
   }  .menu_ctnr > li > div {
     display: flex;
-    gap: clamp(0.6rem, 1vw, 0.9rem);
+    gap: clamp(0.6rem, 2vw, 1.2rem);
     align-items: baseline;
+    justify-content: space-between;
   } .menu_ctnr h2, .menu_ctnr .price {
     font-weight: 100;
     font-size: clamp(1.1rem, 5.5vw, 1.4rem);
@@ -274,10 +276,13 @@ html,
   } .menu_ctnr li .divider {
     flex: 1;
     width: 100%;
-    height: 0.06rem;
-    background-image: linear-gradient(90deg, #ffff6a, #0ff, #ff5bbc);
+    height: 0.0625rem;
     border-radius: 1rem;
-  } .menu_ctnr .price_ctnr {
+  } .menu_ctnr li:nth-child(even) .divider {
+    background-image: linear-gradient(90deg, #ffff6a, #0ff, #ff5bbc);
+  }.menu_ctnr li:nth-child(odd) .divider {
+    background-image: linear-gradient(270deg, #ffff6a, #0ff, #ff5bbc);
+} .menu_ctnr .price_ctnr {
     display: flex;
     gap: clamp(0.6rem, 1vw, 0.9rem);
     align-items: center;
@@ -367,16 +372,7 @@ html,
     flex-direction: column;
     align-items: baseline;
     line-height: 1.4;
-    position: sticky;
-    bottom: calc(clamp(4.2rem, 1vw, 6rem) * -1);
-    background-color: var(--dark);
-    background-image: url(assets/noise.jpg);
-    background-position: center;
-    background-size: 31vh;
-    background-attachment: fixed;
-    z-index: 3;
     padding: 1.2rem 0 3rem;
-    /* box-shadow: 0 0rem 1rem 2rem var(--dark); */
   }
 
   .address, .veg, .job {
@@ -717,7 +713,7 @@ select:-webkit-autofill:focus {
   font-weight: 100;
   font-size: clamp(1.1rem, 5vw, 1.1rem);
 } .drinks_ctnr p {
-  padding: 0.5rem 0 0 0.9rem;
+  padding: clamp(0.1rem, 1vw, 0.4rem) 0 0 0;
 } .drinks_ctnr .highlight {
   background: -webkit-linear-gradient(30deg, #fffc00, #ff9c00, #f000ff,#00baff, #0f6);
   -webkit-background-clip: text;
@@ -731,18 +727,18 @@ select:-webkit-autofill:focus {
 }
 
 .menu_ctnr > li.combo_li {
-  padding: 0 1.5rem;
+  padding: 1rem clamp(0.7rem, calc(22vw - 5rem), 3rem);
   box-sizing: border-box;
   margin-bottom: 3rem;
   font-weight: 900;
   position: relative;
   background-color: var(--dark);
-  border-radius: 0.3rem;
+  border-radius: 0.6rem;
   background-image: url(assets/noise.jpg);
   background-position: center;
   background-size: 31vh;
-  width: clamp(8rem, 47vw, 16rem);
-  height: clamp(8rem, 47vw, 16rem);
+  width: clamp(8rem, 42vw, 16rem);
+  min-height: clamp(8rem, 42vw, 16rem);
   display: flex;
   justify-content: center;
 } .menu_ctnr > li.combo_li > div {
@@ -756,12 +752,12 @@ select:-webkit-autofill:focus {
 } .combo_li::before, .combo_li::after {
   content: '';
   position: absolute;
-  left: -0.1rem;
-  top: -0.1rem;
-  background: linear-gradient(25deg, #ffff6a, #0ff, #ff5bbc,#0ff, #ffff6a);
+  left: -0.0625rem;
+  top: -0.0625rem;
+  background: linear-gradient(30deg, #ffff6a, #0ff, #ff5bbc,#0ff, #ffff6a);
   background-size: 400%;
-  width: calc(100% + 0.2rem);
-  height: calc(100% + 0.2rem);
+  width: calc(100% + 0.125rem);
+  height: calc(100% + 0.125rem);
   z-index: -1;
   animation: steam2 15s linear infinite;
 } .combo_li::after {
@@ -769,6 +765,8 @@ select:-webkit-autofill:focus {
   opacity: 0.3;
 } .combo_li::before {
   border-radius: 0.4rem;
+} .deal_price {
+
 } .combo_li .price {
   background: -webkit-linear-gradient(30deg, #fffc00, #ff9c00, #f000ff,#00baff, #0f6);
   -webkit-background-clip: text;
@@ -848,8 +846,11 @@ select:-webkit-autofill:focus {
 
 
   
-@media (orientation:landscape) and (min-width:800px) {
+@media (orientation:landscape) and (min-width:650px) {
 
+  .hidden_desktop, .drinks_ctnr .hidden_desktop {
+    display: none;
+  }
   body {
     /* background-attachment: initial; */
   }
@@ -877,10 +878,7 @@ select:-webkit-autofill:focus {
     top: 2rem;
     margin: 0;
   } .bullets {
-    position: relative;
-    bottom: unset;
     padding: 3rem 0 5rem;
-    /* box-shadow: unset; */
   }
 
   .slogan {
@@ -954,12 +952,10 @@ select:-webkit-autofill:focus {
     top: -13rem;
     right: 1rem;
     margin: 0;
-    height: unset;
+    min-height: unset;
     box-sizing: content-box;
   } .menu_ctnr > li.combo_li > div {
     flex-direction: row;
-  } .combo_li .price {
-    font-size: 1.5rem;
   }
 
   /* END FAQ DRINKS UPDATE */
@@ -979,19 +975,19 @@ select:-webkit-autofill:focus {
 
   .drinks_ctnr {
     position: fixed;
+    max-height: 69vh;
+    overflow: auto;
     top: 5rem;
     left: calc(clamp(29rem, 40vw, 41rem) + clamp(1.5rem, 8vw, 12rem) + clamp(0rem, 4vw, 4rem));
     width: clamp(18rem, calc(44vw - 20rem), 23rem);
     padding: 2.4rem clamp(1.2rem, 2vw, 2.2rem);
     box-sizing: border-box;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem 3rem 0.5rem 0.5rem;
     border: 0.0625rem solid #131313;
     background-image: linear-gradient(45deg, #ffffff03, #ffffff03), url(assets/noise.jpg);
     background-position: center;
     background-size: cover, 31vh;
     box-shadow: 0 1rem 1.5rem -0.9rem #000;
-  } .drinks_ctnr .divider {
-    display: none;
   }
 
   .deal_divider {
@@ -1012,7 +1008,7 @@ select:-webkit-autofill:focus {
 
 
 
-@media (max-height:600px) and (min-width:120vh) and (max-width:1000px) {
+@media (max-height:600px) and (min-width:50vh) and (max-width:1000px) {
   .logo {
     right: clamp(1.5rem, 6vw, 11rem);
     
@@ -1049,6 +1045,9 @@ select:-webkit-autofill:focus {
     width: clamp(11rem, 50vw, 26rem);
   }
 
+  .menu_ctnr > li.combo_li {
+
+  }
 }
 
 
