@@ -34,8 +34,9 @@ html,
     overflow-x: hidden;
     overflow-y: auto;
     background-image: url(assets/noise.jpg);
+    background-image: -webkit-image-set(url(assets/noise.jpg) 1x, url(assets/noise.avif) 1x);
     background-position: center;
-    background-size: 31vh;
+    background-size: 38vh;
   }
   
   body,
