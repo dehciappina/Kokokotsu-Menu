@@ -7,6 +7,7 @@
     <title>Kokokotsu | Comic & Japanese Food</title>
     <link rel="stylesheet" href="./main.css">
     <script src="./main.js" defer></script>
+    <script src="./cart.js" defer></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -25,7 +26,113 @@
                 <img src="assets/logo.png" alt="Kokokotsu Logo" draggable="false">
             </picture>
 
-            <div class="neon"></div>
+
+            <section class="cart_sec">
+                <div class="neon"></div>
+
+                <div class="content">
+                    <picture class="logo_cart" loading="lazy">
+                        <source srcset="assets/logo.webp" type="image/webp">
+                        <source srcset="assets/logo.png" type="image/png">
+                        <img src="assets/logo.png" alt="Kokokotsu Logo" draggable="false">
+                    </picture>
+        
+                    <article class="order_summary">
+                        <div class="captions">
+                            <div class="column first">Item</div>
+                            <div class="column second">Qty</div>
+                            <div class="column third">Price</div>
+                            <div class="column fourth">Flavour</div>
+                        </div>
+
+                        <div class="item">
+                            <div class="item_flex">
+                                <span class="column first">
+                                    <button class="remove_item edamame" title="Remove item">
+                                        <div></div>
+                                    </button>
+                                    Edamame
+                                </span>
+                                <div class="column second edamame_display_amount">0</div>
+                                <div class="column third edamame_display_price">£0</div>
+                                <div class="column fourth">-</div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="item_flex">
+                                <span class="column first">
+                                    <button class="remove_item gyoza" title="Remove item">
+                                        <div></div>
+                                    </button>
+                                    Gyoza
+                                </span>
+                                <div class="column second gyoza_display_amount">0</div>
+                                <div class="column third gyoza_display_price">£0</div>
+                                <div class="column fourth gyoza_filling_menu"><span class="empty_sign">-</span></div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="item_flex">
+                                <span class="column first">
+                                    <button class="remove_item mochi" title="Remove item">
+                                        <div></div>
+                                    </button>
+                                    Mochi
+                                </span>
+                                <div class="column second mochi_display_amount">0</div>
+                                <div class="column third mochi_display_price">£0</div>
+                                <div class="column fourth">-</div>
+                            </div>
+                        </div>
+
+                        <div class="result">
+                            <div>
+                                <span class="column first">Total</span>
+                                <div class="column second total_display_amount">0</div>
+                                <div class="column third total_display_price"><p>£0</p></div>
+                                <div class="column fourth">-</div>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="input_ctnr">
+                        <div class="name_input">
+                            <p>Your name:</p>
+                            <input type="text" name="user_name" id="user_name" maxlength="20" minlength="1" placeholder="Yusuke?!">
+                        </div>
+
+                        <div>
+                            <p>Table No.:</p>
+                            <input type="number" min="1" max="35" placeholder="1-35">
+                        </div>
+                    </article>
+
+                    <button type="submit" class="receipt_generate">Confirm & Pay</button>
+                </div>
+
+                <div class="checkout_footer">
+
+                    <div role="button" class="clear_cart">Clear<br/>order</div>
+
+                    <div class="back_to_menu" role="button" onclick="toggleCart()">
+                        <div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        Back to menu
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
 
             <div class="left_ctnr">
                 <div class="slogan_ctnr">
@@ -120,6 +227,18 @@
                                 <div class="divider"></div>
                                 <div class="price_ctnr">
                                     <span class="price">£10</span>
+
+                                    <div class="quantity">
+                                        <button onclick="updateCart('remove', 'Gyoza'), updateFillingInputs('remove')">
+                                            <div></div>
+                                        </button>
+
+                                        <input id="gyozaAmount" name="number" type="number" readonly value="0">
+                                        
+                                        <button onclick="updateCart('add', 'Gyoza'), updateFillingInputs('add')">
+                                            <div></div>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
         
@@ -196,6 +315,10 @@
                                 Work with us!
                             </span>
                         </a>
+                    </div>
+                    
+                    <div class="go_to_cart" role="button">
+                        <span class="counter">Your order <b>(0)</b></span>
                     </div>
                 </div>
             </div>
