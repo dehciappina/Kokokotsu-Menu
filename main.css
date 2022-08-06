@@ -1216,7 +1216,7 @@ select:-webkit-autofill:focus {
   font-weight: 900;
   position: relative;
   background-color: var(--dark);
-  border-radius: 0.6rem;
+  border-radius: 0.5rem;
   background-image: url(assets/noise.jpg);
   background-position: center;
   background-size: 31vh;
@@ -1237,12 +1237,12 @@ select:-webkit-autofill:focus {
   position: absolute;
   left: -0.0625rem;
   top: -0.0625rem;
-  background: linear-gradient(30deg, #ffff6a, #0ff, #ff5bbc,#0ff, #ffff6a);
+  background: linear-gradient(30deg, #ffff6a, #0ff, #ff5bbc, #0ff, #ffff6a);
   background-size: 400%;
   width: calc(100% + 0.125rem);
   height: calc(100% + 0.125rem);
   z-index: -1;
-  animation: steam2 15s linear infinite;
+  animation: steam2 11s linear infinite;
 } .combo_li::after {
   filter: blur(0.6rem);
   opacity: 0.3;
