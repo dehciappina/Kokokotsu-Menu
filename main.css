@@ -368,7 +368,6 @@ html,
     font-size: 1.2rem;
     cursor: default;
     font-weight: 400;
-    margin: 0.1rem;
     transform: translateY(6%);
     color: var(--light);
   } .quantity button {
@@ -383,7 +382,7 @@ html,
     box-sizing: unset;
     padding: 0;
     border-radius: 0.3rem;
-    background-color: #CCC;
+    background-color: var(--dark);
     transition: background-color 0.3s linear;
   } .quantity button:hover {
     background-color: #fff;
@@ -393,8 +392,8 @@ html,
   } .quantity button div {
     transition: border-color 0.2s ease;
     border-radius: 0.2rem;
-    width: 85%;
-    height: 85%;
+    width: 75%;
+    height: 75%;
     background-color: var(--light);
     display: flex;
     justify-content: center;
@@ -536,7 +535,7 @@ select:-webkit-autofill:focus {
   width: 100%;
   flex-direction: column;
   gap: clamp(1.2rem, 5vh, 2rem);
-  padding: 4rem clamp(2rem, 12vw, 5rem) 4rem;
+  padding: clamp(4rem, 11vh, 7rem) clamp(2rem, 12vw, 5rem) 4rem;
   overflow-y: auto;
   height: 100%;
   box-sizing: border-box;
@@ -779,6 +778,7 @@ select:-webkit-autofill:focus {
   outline-offset: -0.1rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
+  user-select: none;
 } .receipt_generate:hover {
   background-color: #0a070bed;
   transition:background-color 0.05s ease;
@@ -844,7 +844,7 @@ select:-webkit-autofill:focus {
   gap: clamp(0.6rem, 5vw, 1.8rem);
 } .back_to_menu:hover, .clear_cart:hover {
   background-color:#101010;
-  transition: background-color 0.1s ease;
+  transition: background-color 0.05s ease;
 } .back_to_menu div {
   display: flex;
   gap:0.3rem;
@@ -855,6 +855,28 @@ select:-webkit-autofill:focus {
   border-left: 0.15rem solid var(--light);
   display: block;
   transform: rotate(-45deg) translate(25%, 0%);
+} .top_back_to_menu {
+  color: #fff;
+  align-self: flex-start;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #ffffff08;
+  position: absolute;
+  top: 0;
+  left: 0;
+} .top_back_to_menu div {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-left: 0.15rem solid #fff;
+  border-bottom: 0.15rem solid #fff;
+  transform: translateX(25%) rotate(45deg);
+  box-sizing: border-box;
+} .top_back_to_menu:hover {
+  background-color: #ffffff0f;
 }
 
 
@@ -1421,7 +1443,7 @@ select:-webkit-autofill:focus {
     width: 14rem;
     position: absolute;
     top: -13rem;
-    right: 1rem;
+    right: 0;
     margin: 0;
     min-height: unset;
     box-sizing: content-box;
@@ -1446,7 +1468,7 @@ select:-webkit-autofill:focus {
     left: clamp(1.5rem, 8vw, 12rem);
     right: unset;
     width: clamp(29rem, 38vw, 38rem);
-    margin: 0 0 12rem;
+    margin: 0 0 8rem;
     height: 3.2rem;
     font-size: 0.9rem;
   } .cart_sec {
@@ -1457,7 +1479,42 @@ select:-webkit-autofill:focus {
     margin:0 auto;
   }
   
+  .quantity button div {
+    width: 85%;
+    height: 85%;
+  }
+  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1490,6 +1547,25 @@ select:-webkit-autofill:focus {
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

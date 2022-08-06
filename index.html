@@ -30,6 +30,10 @@
             <section class="cart_sec">
                 <div class="neon"></div>
 
+                <div class="top_back_to_menu" role="button" onclick="toggleCart()">
+                    <div></div>
+                </div>
+
                 <div class="content">
                     <picture class="logo_cart" loading="lazy">
                         <source srcset="assets/logo.webp" type="image/webp">
@@ -48,7 +52,7 @@
                         <div class="item">
                             <div class="item_flex">
                                 <span class="column first">
-                                    <button class="remove_item edamame" title="Remove item">
+                                    <button class="remove_item edamame" title="Remove item" onclick="updateCart('remove', 'Edamame')">
                                         <div></div>
                                     </button>
                                     Edamame
@@ -62,7 +66,7 @@
                         <div class="item">
                             <div class="item_flex">
                                 <span class="column first">
-                                    <button class="remove_item gyoza" title="Remove item">
+                                    <button class="remove_item gyoza" title="Remove item" onclick="updateCart('remove', 'Gyoza')">
                                         <div></div>
                                     </button>
                                     Gyoza
@@ -76,7 +80,7 @@
                         <div class="item">
                             <div class="item_flex">
                                 <span class="column first">
-                                    <button class="remove_item mochi" title="Remove item">
+                                    <button class="remove_item mochi" title="Remove item" onclick="updateCart('remove', 'Mochi')">
                                         <div></div>
                                     </button>
                                     Mochi
@@ -115,7 +119,7 @@
 
                 <div class="checkout_footer">
 
-                    <div role="button" class="clear_cart">Clear<br/>order</div>
+                    <div role="button" class="clear_cart" onclick="updateCart('remove', 'All')">Clear<br/>order</div>
 
                     <div class="back_to_menu" role="button" onclick="toggleCart()">
                         <div>
@@ -212,6 +216,18 @@
                                 <div class="divider"></div>
                                 <div class="price_ctnr">
                                     <span class="price">£3</span>
+
+                                    <div class="quantity">
+                                        <button onclick="updateCart('remove', 'Edamame')">
+                                            <div></div>
+                                        </button>
+
+                                        <input id="edamameAmount" name="number" type="number" readonly value="0">
+                                        
+                                        <button onclick="updateCart('add', 'Edamame')">
+                                            <div></div>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
         
@@ -229,13 +245,13 @@
                                     <span class="price">£10</span>
 
                                     <div class="quantity">
-                                        <button onclick="updateCart('remove', 'Gyoza'), updateFillingInputs('remove')">
+                                        <button onclick="updateCart('remove', 'Gyoza')">
                                             <div></div>
                                         </button>
 
                                         <input id="gyozaAmount" name="number" type="number" readonly value="0">
                                         
-                                        <button onclick="updateCart('add', 'Gyoza'), updateFillingInputs('add')">
+                                        <button onclick="updateCart('add', 'Gyoza')">
                                             <div></div>
                                         </button>
                                     </div>
@@ -260,6 +276,18 @@
                                 <div class="divider"></div>
                                 <div class="price_ctnr">
                                     <span class="price">£4</span>
+
+                                    <div class="quantity">
+                                        <button onclick="updateCart('remove', 'Mochi')">
+                                            <div></div>
+                                        </button>
+
+                                        <input id="mochiAmount" name="number" type="number" readonly value="0">
+                                        
+                                        <button onclick="updateCart('add', 'Mochi')">
+                                            <div></div>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 
@@ -318,7 +346,7 @@
                     </div>
                     
                     <div class="go_to_cart" role="button">
-                        <span class="counter">Your order <b>(0)</b></span>
+                        <span class="counter">Your order <b>(0)</b> 🥟</span>
                     </div>
                 </div>
             </div>
