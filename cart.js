@@ -5,9 +5,9 @@ const mochiPrice = 4;
 let finalPrice = 0;
 let itemAmount;
 
-const edamameAmount = document.getElementById('edamameAmount');
+// const edamameAmount = document.getElementById('edamameAmount');
 const gyozaAmount = document.getElementById('gyozaAmount');
-const mochiAmount = document.getElementById('mochiAmount')
+// const mochiAmount = document.getElementById('mochiAmount')
 
 const goToCart = document.querySelector('.go_to_cart')
 const goToCartAmount = document.querySelector('.go_to_cart .counter')
@@ -16,14 +16,14 @@ const cartSection = document.querySelector(".cart_sec")
 let showingCart = false;
 
 
-let edamameDisplayAmount = document.querySelector('.edamame_display_amount');
-let edamameDisplayPrice = document.querySelector('.edamame_display_price');
+// let edamameDisplayAmount = document.querySelector('.edamame_display_amount');
+// let edamameDisplayPrice = document.querySelector('.edamame_display_price');
 
 let gyozaDisplayAmount = document.querySelector('.gyoza_display_amount');
 let gyozaDisplayPrice = document.querySelector('.gyoza_display_price');
 
-let mochiDisplayAmount = document.querySelector('.mochi_display_amount');
-let mochiDisplayPrice = document.querySelector('.mochi_display_price');
+// let mochiDisplayAmount = document.querySelector('.mochi_display_amount');
+// let mochiDisplayPrice = document.querySelector('.mochi_display_price');
 
 
 let totalDisplayAmount = document.querySelector('.total_display_amount');
@@ -36,11 +36,12 @@ function updateCart(operation, item) {
         if(item == 'Gyoza') {
             gyozaAmount.value = parseInt(gyozaAmount.value) + 1;
             updateFillingInputs('add')
-        } else if(item == 'Edamame') {
-            edamameAmount.value = parseInt(edamameAmount.value) + 1;
-        } else if(item == 'Mochi') {
-            mochiAmount.value = parseInt(mochiAmount.value) + 1;
         }
+        // else if(item == 'Edamame') {
+        //     edamameAmount.value = parseInt(edamameAmount.value) + 1;
+        // } else if(item == 'Mochi') {
+        //     mochiAmount.value = parseInt(mochiAmount.value) + 1;
+        // }
 
     } else if(operation == 'remove') {
         if(item == 'Gyoza') {
@@ -48,18 +49,20 @@ function updateCart(operation, item) {
                 gyozaAmount.value = parseInt(gyozaAmount.value) - 1;
                 updateFillingInputs('remove')
             }
-        } else if(item == 'Edamame') {
-            if(edamameAmount.value > 0) {
-                edamameAmount.value = parseInt(edamameAmount.value) - 1;
-            }
-        } else if(item == 'Mochi') {
-            if(mochiAmount.value > 0) {
-                mochiAmount.value = parseInt(mochiAmount.value) - 1;
-            }
-        } else if(item == 'All') {
+        }
+        // else if(item == 'Edamame') {
+        //     if(edamameAmount.value > 0) {
+        //         edamameAmount.value = parseInt(edamameAmount.value) - 1;
+        //     }
+        // } else if(item == 'Mochi') {
+        //     if(mochiAmount.value > 0) {
+        //         mochiAmount.value = parseInt(mochiAmount.value) - 1;
+        //     }
+        // }
+        else if(item == 'All') {
             gyozaAmount.value = 0;
-            edamameAmount.value = 0;
-            mochiAmount.value = 0;
+            // edamameAmount.value = 0;
+            // mochiAmount.value = 0;
     
             gyozaFillingSelections = document.querySelectorAll('.gyoza_filling_menu select')
         
@@ -70,22 +73,28 @@ function updateCart(operation, item) {
         }
     }
 
-    itemAmount = parseInt(gyozaAmount.value) + parseInt(edamameAmount.value) + parseInt(mochiAmount.value);
+    // itemAmount = parseInt(gyozaAmount.value) + parseInt(edamameAmount.value) + parseInt(mochiAmount.value);
+    itemAmount = parseInt(gyozaAmount.value);
 
     
-    edamameDisplayAmount.innerHTML = `${parseInt(edamameAmount.value)}`
-    edamameDisplayPrice.innerHTML = `£${parseInt(edamameAmount.value) * edamamePrice}`
+    // edamameDisplayAmount.innerHTML = `${parseInt(edamameAmount.value)}`
+    // edamameDisplayPrice.innerHTML = `£${parseInt(edamameAmount.value) * edamamePrice}`
 
     gyozaDisplayAmount.innerHTML = `${parseInt(gyozaAmount.value)}`
     gyozaDisplayPrice.innerHTML = `£${parseInt(gyozaAmount.value) * gyozaPrice}`
 
-    mochiDisplayAmount.innerHTML = `${parseInt(mochiAmount.value)}`
-    mochiDisplayPrice.innerHTML = `£${parseInt(mochiAmount.value) * mochiPrice}`
+    // mochiDisplayAmount.innerHTML = `${parseInt(mochiAmount.value)}`
+    // mochiDisplayPrice.innerHTML = `£${parseInt(mochiAmount.value) * mochiPrice}`
     
     totalDisplayAmount.innerHTML = itemAmount;
-    totalDisplayPrice.innerHTML = `<p>£${(parseInt(gyozaAmount.value) * gyozaPrice) + (parseInt(edamameAmount.value) * edamamePrice) + (parseInt(mochiAmount.value) * mochiPrice)}</p>`
+    // totalDisplayPrice.innerHTML = `<p>£${(parseInt(gyozaAmount.value) * gyozaPrice) + (parseInt(edamameAmount.value) * edamamePrice) + (parseInt(mochiAmount.value) * mochiPrice)}</p>`
+    totalDisplayPrice.innerHTML = `<p>£${(parseInt(gyozaAmount.value) * gyozaPrice)}</p>`
     
-    if(parseInt(gyozaAmount.value) > 0 || parseInt(edamameAmount.value) > 0 || parseInt(mochiAmount.value) > 0) {
+    // if(parseInt(gyozaAmount.value) > 0 || parseInt(edamameAmount.value) > 0 || parseInt(mochiAmount.value) > 0) {
+    //     goToCart.classList.add('show_go_to_cart')
+    // }
+    
+    if(parseInt(gyozaAmount.value) > 0) {
         goToCart.classList.add('show_go_to_cart')
     } else {
         setTimeout(() => {
@@ -96,18 +105,16 @@ function updateCart(operation, item) {
     goToCartAmount.innerHTML = `Your order <b>(${itemAmount})</b> 🥟`
 
     if(parseInt(gyozaAmount.value) > 0) {
-        // gyozaRemoveItem.style.display = 'block';
         emptySign.style.display = 'none';
     } else {
-        // gyozaRemoveItem.style.display = 'none';
         emptySign.style.display = 'block'
     }
 
-    if(parseInt(edamameAmount.value) > 0) {
-        removeEdamameBt.style.display = 'block';
-    } else {
-        removeEdamameBt.style.display = 'none';
-    }
+    // if(parseInt(edamameAmount.value) > 0) {
+    //     removeEdamameBt.style.display = 'block';
+    // } else {
+    //     removeEdamameBt.style.display = 'none';
+    // }
 
     if(parseInt(gyozaAmount.value) > 0) {
         removeGyozaBt.style.display = 'block';
@@ -115,11 +122,11 @@ function updateCart(operation, item) {
         removeGyozaBt.style.display = 'none';
     }
 
-    if(parseInt(mochiAmount.value) > 0) {
-        removeMochiBt.style.display = 'block';
-    } else {
-        removeMochiBt.style.display = 'none';
-    }
+    // if(parseInt(mochiAmount.value) > 0) {
+    //     removeMochiBt.style.display = 'block';
+    // } else {
+    //     removeMochiBt.style.display = 'none';
+    // }
 
 }
 
