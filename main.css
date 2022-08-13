@@ -36,7 +36,7 @@ html,
     background-image: url(assets/noise.jpg);
     background-image: -webkit-image-set(url(assets/noise.jpg) 1x, url(assets/noise.avif) 1x);
     background-position: center;
-    background-size: clamp(26vh, 16vw, 30vh);
+    background-size: clamp(24vh, 16vw, 30vh);
   }
   
   body,
@@ -245,7 +245,7 @@ html,
     color: var(--light);
     line-height: 1;
     margin: 0;
-    padding: 0 clamp(0rem, 2vw, 3rem) clamp(1rem, 40vw, 10rem) clamp(1.5rem, 9vw, 3rem);
+    padding: 0 clamp(0rem, 2vw, 3rem) clamp(1rem, 12vw, 10rem) clamp(1.5rem, 9vw, 3rem);
     margin-left: calc(clamp(1.5rem, 9vw, 3rem) * -1);
     box-sizing: border-box;
     max-width: 38rem;
@@ -285,14 +285,14 @@ html,
     background-image: linear-gradient(270deg, #ffff6a, #0ff, #ff5bbc);
   } .menu_ctnr .flavours li .divider {
     background-image: unset;
-    background-color: #161616;
-    transition: background-color 1s ease, background-position 4s ease;
-    background-image: linear-gradient(90deg, #aaa, transparent 60%);
-    background-position-x: calc(clamp(20rem, 40vw, 35rem) * -1);
+    background-color: #222;
+    transition: background-color 1s ease, background-position 5s ease-out;
+    background-image: linear-gradient(90deg, #aaa, transparent 62%);
+    background-position-x: calc(clamp(15rem, 30vw, 35rem) * -1);
     background-repeat: no-repeat;
   } .flavours li:hover .divider {
-    /* background-color:#262626; */
-    transition: background-color 0.1s ease, background-position 1s ease;
+    background-color:#111;
+    transition: background-color 0.1s ease, background-position 1.5s ease;
     background-position-x: 0rem;
   } .menu_ctnr .price_ctnr {
     display: flex;
@@ -361,7 +361,6 @@ html,
     flex-direction: column;
     margin: 0.5rem 0 9rem;
     padding: 0;
-    max-height: clamp(3rem, 6vw, 6rem);
     user-select: none;
   } .flavours li {
     color: var(--light);
@@ -566,7 +565,7 @@ select:-webkit-autofill:focus {
   width: 100%;
 } .go_to_cart {
   position: fixed;
-  bottom: 1.3rem;
+  bottom: 2rem;
   left: 1.3rem;
   right: 1.5rem;
   height: clamp(2.5rem, 13vw, 3.5rem);
@@ -577,7 +576,6 @@ select:-webkit-autofill:focus {
   color: var(--light);
   justify-content: center;
   align-items: center;
-  font-size: clamp(0.7rem, 4vw, 1rem);
   font-weight: 100;
   letter-spacing: 0.2rem;
   transform: translateY(100%);
@@ -587,13 +585,15 @@ select:-webkit-autofill:focus {
   visibility: hidden;
   border: 0.1rem solid var(--light);
   border-radius: 0.3rem;
-  box-shadow: 0 0.1rem var(--light), 0 0rem 0 -1rem var(--light), 0 2rem 2rem var(--dark);
+  box-shadow: 0 0rem 0 -1rem var(--light), 0 2rem 2rem var(--dark);
   background-image: url(assets/noise.jpg);
   background-position: center;
   background-size: 31vh;
   user-select: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
 } .go_to_cart:hover {
-  box-shadow: 0 0.2rem var(--light), 0 0rem 2rem -1rem var(--light), 0 2rem 2rem var(--dark);
+  box-shadow: 0 0rem 2rem -1rem var(--light), 0 2rem 2rem var(--dark);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s ease, visibility 0.15s ease, background-color 0.15s ease, box-shadow 0.2s ease;
 } .go_to_cart:hover {
   background-color: #151515;
@@ -741,7 +741,7 @@ select:-webkit-autofill:focus {
   align-items: center;
 } .input_ctnr input {
   font-size: clamp(0.7rem, 3.5vw, 0.9rem);
-  border: 0.0625rem solid #CCC;
+  border: 0.0625rem solid #666;
   padding: clamp(0.2rem, 1.8vw, 0.4rem) 0.6rem;
   color: var(--light);
   width: 50%;
@@ -1478,8 +1478,6 @@ select:-webkit-autofill:focus {
     max-width: 38rem;
     margin: 0 0 0;
     height: 3.2rem;
-    font-size: 0.8rem;
-    text-transform: uppercase;
   } .cart_sec {
     width: clamp(15rem, 83vw, 36rem);
     transition: transform 0.45s cubic-bezier(0.39, 0.58, 0.57, 1);
@@ -1495,7 +1493,7 @@ select:-webkit-autofill:focus {
 
 
   .flavours {
-    
+    margin: 0.5rem 0 1rem;
   }
   
   

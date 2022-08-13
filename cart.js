@@ -74,7 +74,7 @@ function updateCart(operation, item) {
             }
         } else if(item == 'All') {
 
-            for(i = 0; itemAmount > i; i++) {
+            for(i = 0; itemAmount > 0; i++) {
                 updateCart('remove', 'PorkGyoza')
                 updateCart('remove', 'ChickenGyoza')
                 updateCart('remove', 'VegetableGyoza')
@@ -231,13 +231,13 @@ function updateFillingInputs(operation, filling) {
 }
 
 
-let removeBts = document.querySelectorAll('.remove_bt')
+// let removeBts = document.querySelectorAll('.remove_bt')
 
-for(i = 0; i < removeBts.length; ++i) {
-    removeBts[i].addEventListener('click', function() {
-        removeBts[i].parentElement.remove()
-    })
-}
+// for(i = 0; i < removeBts.length; ++i) {
+//     removeBts[i].addEventListener('click', function() {
+//         removeBts[i].parentElement.remove()
+//     })
+// }
 
 
 
