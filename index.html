@@ -45,7 +45,7 @@
                             <div class="column first">Item</div>
                             <div class="column second">Qty</div>
                             <div class="column third">Price</div>
-                            <div class="column fourth">Flavour</div>
+                            <div class="column fourth">Filling(s)</div>
                         </div>
 
                         <!-- <div class="item">
@@ -65,9 +65,9 @@
                         <div class="item">
                             <div class="item_flex">
                                 <span class="column first">
-                                    <button class="remove_item gyoza" title="Remove item" onclick="updateCart('remove', 'Gyoza')">
+                                    <!-- <button class="remove_item gyoza" title="Remove item" onclick="updateCart('remove', 'last')">
                                         <div></div>
-                                    </button>
+                                    </button> -->
                                     Gyoza
                                 </span>
                                 <div class="column second gyoza_display_amount">0</div>
@@ -95,7 +95,7 @@
                                 <span class="column first">Total</span>
                                 <div class="column second total_display_amount">0</div>
                                 <div class="column third total_display_price"><p>£0</p></div>
-                                <div class="column fourth">-</div>
+                                <div class="column fourth"></div>
                             </div>
                         </div>
                     </article>
@@ -123,10 +123,8 @@
                     <div class="back_to_menu" role="button" onclick="toggleCart()">
                         <div>
                             <span></span>
-                            <span></span>
-                            <span></span>
                         </div>
-                        Back to menu
+                        Edit your order
                     </div>
                 </div>
             </section>
@@ -153,20 +151,16 @@
 
                         <!-- FAQ COMBO UPDATE -->
         
-                        <li class="combo_li">
+                        <!-- <li class="combo_li">
                             <div>
-                                <!-- <h2>Edamame + Gyoza + Mochi + Cocktail</h2>
+                                <h2>Edamame + Gyoza + Mochi + Cocktail</h2>
                                 
                                 <div class="deal_price">
                                     <span class="price">£25</span>
-                                </div> -->
-                                <h2>*DEAL*</h2>
-                                
-                                <div class="deal_price">
-                                    <span class="price">£NN</span>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
+                        
                         <div class="divider hidden_desktop"></div>
                         
         
@@ -246,29 +240,99 @@
                                 <div class="divider"></div>
                                 <div class="price_ctnr">
                                     <span class="price">£10</span>
-
-                                    <div class="quantity">
-                                        <button onclick="updateCart('remove', 'Gyoza')">
-                                            <div></div>
-                                        </button>
-
-                                        <input id="gyozaAmount" name="number" type="number" readonly value="0">
-                                        
-                                        <button onclick="updateCart('add', 'Gyoza')">
-                                            <div></div>
-                                        </button>
-                                    </div>
                                 </div>
                             </div>
         
                             <sub>
-                                <p><strong>Seven delicious pouches of umami goodness, crunchy on one side and soft on the other.</strong></p>
-                                <p>We're not here to lie, using chopsticks does make you look cool... but Gyoza do taste better if just grab them with your hands.</p>
+                                <h3>Seven delicious pouches of umami goodness, crunchy on one side and soft on the other.</h3>
+                                <h4>We're not here to lie, using chopsticks does make you look cool... but Gyoza do taste better if just grab them with your hands.</h4>
 
                                 <ul class="flavours">
-                                    <li>Pork</li>
-                                    <li>Chicken</li>
-                                    <li>Vegan</li>
+                                    <li>
+                                        <span>Pork</span>
+                                        <div class="divider"></div>
+                                        <div class="price_ctnr">
+                                            <div class="quantity">
+                                                <button onclick="updateCart('remove', 'PorkGyoza')">
+                                                    <div></div>
+                                                </button>
+        
+                                                <input id="porkGyozaAmount" name="pork-gyoza-amount" type="number" readonly value="0">
+                                                
+                                                <button onclick="updateCart('add', 'PorkGyoza')">
+                                                    <div></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>Chicken</span>
+                                        <div class="divider"></div>
+                                        <div class="price_ctnr">
+                                            <div class="quantity">
+                                                <button onclick="updateCart('remove', 'ChickenGyoza')">
+                                                    <div></div>
+                                                </button>
+        
+                                                <input id="chickenGyozaAmount" name="chicken-gyoza-amount" type="number" readonly value="0">
+                                                
+                                                <button onclick="updateCart('add', 'ChickenGyoza')">
+                                                    <div></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>Vegetable</span>
+                                        <div class="divider"></div>
+                                        <div class="price_ctnr">
+                                            <div class="quantity">
+                                                <button onclick="updateCart('remove', 'VegetableGyoza')">
+                                                    <div></div>
+                                                </button>
+        
+                                                <input id="vegetableGyozaAmount" name="vegetable-gyoza-amount" type="number" readonly value="0">
+                                                
+                                                <button onclick="updateCart('add', 'VegetableGyoza')">
+                                                    <div></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>Prawn</span>
+                                        <div class="divider"></div>
+                                        <div class="price_ctnr">
+                                            <div class="quantity">
+                                                <button onclick="updateCart('remove', 'PrawnGyoza')">
+                                                    <div></div>
+                                                </button>
+        
+                                                <input id="prawnGyozaAmount" name="prawn-gyoza-amount" type="number" readonly value="0">
+                                                
+                                                <button onclick="updateCart('add', 'PrawnGyoza')">
+                                                    <div></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>Duck</span>
+                                        <div class="divider"></div>
+                                        <div class="price_ctnr">
+                                            <div class="quantity">
+                                                <button onclick="updateCart('remove', 'DuckGyoza')">
+                                                    <div></div>
+                                                </button>
+        
+                                                <input id="duckGyozaAmount" name="duck-gyoza-amount" type="number" readonly value="0">
+                                                
+                                                <button onclick="updateCart('add', 'DuckGyoza')">
+                                                    <div></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
                             </sub>
                         </li>
@@ -318,7 +382,7 @@
 
                     </ul>
     
-                    <div class="bullets">
+                    <!-- <div class="bullets">
                         <a class="address" target="_blank" rel="external">
                             <div class="place"></div>
                             <span>
@@ -326,7 +390,7 @@
                             </span>
                         </a>
 
-                        <!-- <a class="address" href="https://goo.gl/maps/J3HuNS7oyikY78At6" target="_blank" rel="external">
+                        <a class="address" href="https://goo.gl/maps/J3HuNS7oyikY78At6" target="_blank" rel="external">
                             <div class="place"></div>
                             <span>
                                 Find us at FAQ | Market Square, Bicester, OX26 6AH
@@ -338,14 +402,14 @@
                             <span>
                                 Find us at Also Known As | 54-56 Parsons Street, OX16 5NB
                             </span>
-                        </a> -->
+                        </a>
     
-                        <!-- <div class="veg">
+                        <div class="veg">
                             <div></div>
                             <span>
                                 Vegetarian Options Available
                             </span>
-                        </div> -->
+                        </div>
 
                         <a class="job" href="./jobs.html">
                             <div></div>
@@ -353,7 +417,7 @@
                                 Work with us!
                             </span>
                         </a>
-                    </div>
+                    </div> -->
                     
                     <div class="go_to_cart" role="button">
                         <span class="counter">Your order <b>(0)</b> 🥟</span>

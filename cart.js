@@ -5,9 +5,13 @@ const mochiPrice = 4;
 let finalPrice = 0;
 let itemAmount;
 
-// const edamameAmount = document.getElementById('edamameAmount');
 const gyozaAmount = document.getElementById('gyozaAmount');
-// const mochiAmount = document.getElementById('mochiAmount')
+
+const porkGyozaAmount = document.getElementById('porkGyozaAmount');
+const chickenGyozaAmount = document.getElementById('chickenGyozaAmount');
+const vegetableGyozaAmount = document.getElementById('vegetableGyozaAmount');
+const prawnGyozaAmount = document.getElementById('prawnGyozaAmount');
+const duckGyozaAmount = document.getElementById('duckGyozaAmount');
 
 const goToCart = document.querySelector('.go_to_cart')
 const goToCartAmount = document.querySelector('.go_to_cart .counter')
@@ -15,16 +19,8 @@ const goToCartAmount = document.querySelector('.go_to_cart .counter')
 const cartSection = document.querySelector(".cart_sec")
 let showingCart = false;
 
-
-// let edamameDisplayAmount = document.querySelector('.edamame_display_amount');
-// let edamameDisplayPrice = document.querySelector('.edamame_display_price');
-
 let gyozaDisplayAmount = document.querySelector('.gyoza_display_amount');
 let gyozaDisplayPrice = document.querySelector('.gyoza_display_price');
-
-// let mochiDisplayAmount = document.querySelector('.mochi_display_amount');
-// let mochiDisplayPrice = document.querySelector('.mochi_display_price');
-
 
 let totalDisplayAmount = document.querySelector('.total_display_amount');
 let totalDisplayPrice = document.querySelector('.total_display_price');
@@ -33,68 +29,80 @@ let totalDisplayPrice = document.querySelector('.total_display_price');
 
 function updateCart(operation, item) {
     if(operation == 'add') {
-        if(item == 'Gyoza') {
-            gyozaAmount.value = parseInt(gyozaAmount.value) + 1;
-            updateFillingInputs('add')
+        if(item == 'PorkGyoza') {
+            porkGyozaAmount.value = parseInt(porkGyozaAmount.value) + 1;
+            updateFillingInputs('add', 'pork')
+        } else if(item == 'ChickenGyoza') {
+            chickenGyozaAmount.value = parseInt(chickenGyozaAmount.value) + 1;
+            updateFillingInputs('add', 'chicken')
+        } else if(item == 'VegetableGyoza') {
+            vegetableGyozaAmount.value = parseInt(vegetableGyozaAmount.value) + 1;
+            updateFillingInputs('add', 'vegetable')
+        } else if(item == 'PrawnGyoza') {
+            prawnGyozaAmount.value = parseInt(prawnGyozaAmount.value) + 1;
+            updateFillingInputs('add', 'prawn')
+        } else if(item == 'DuckGyoza') {
+            duckGyozaAmount.value = parseInt(duckGyozaAmount.value) + 1;
+            updateFillingInputs('add', 'duck')
         }
-        // else if(item == 'Edamame') {
-        //     edamameAmount.value = parseInt(edamameAmount.value) + 1;
-        // } else if(item == 'Mochi') {
-        //     mochiAmount.value = parseInt(mochiAmount.value) + 1;
-        // }
 
     } else if(operation == 'remove') {
-        if(item == 'Gyoza') {
-            if(gyozaAmount.value > 0) {
-                gyozaAmount.value = parseInt(gyozaAmount.value) - 1;
-                updateFillingInputs('remove')
+        if(item == 'PorkGyoza') {
+            if(parseInt(porkGyozaAmount.value) > 0) {
+                porkGyozaAmount.value = parseInt(porkGyozaAmount.value) - 1;
+                updateFillingInputs('remove', 'pork')
             }
-        }
-        // else if(item == 'Edamame') {
-        //     if(edamameAmount.value > 0) {
-        //         edamameAmount.value = parseInt(edamameAmount.value) - 1;
-        //     }
-        // } else if(item == 'Mochi') {
-        //     if(mochiAmount.value > 0) {
-        //         mochiAmount.value = parseInt(mochiAmount.value) - 1;
-        //     }
-        // }
-        else if(item == 'All') {
-            gyozaAmount.value = 0;
-            // edamameAmount.value = 0;
-            // mochiAmount.value = 0;
+        } else if(item == 'ChickenGyoza') {
+            if(parseInt(chickenGyozaAmount.value) > 0) {
+                chickenGyozaAmount.value = parseInt(chickenGyozaAmount.value) - 1;
+                updateFillingInputs('remove', 'chicken')
+            }
+        } else if(item == 'VegetableGyoza') {
+            if(parseInt(vegetableGyozaAmount.value) > 0) {
+                vegetableGyozaAmount.value = parseInt(vegetableGyozaAmount.value) - 1;
+                updateFillingInputs('remove', 'vegetable')
+            }
+        } else if(item == 'PrawnGyoza') {
+            if(parseInt(prawnGyozaAmount.value) > 0) {
+                prawnGyozaAmount.value = parseInt(prawnGyozaAmount.value) - 1;
+                updateFillingInputs('remove', 'prawn')
+            }
+        } else if(item == 'DuckGyoza') {
+            if(parseInt(duckGyozaAmount.value) > 0) {
+                duckGyozaAmount.value = parseInt(duckGyozaAmount.value) - 1;
+                updateFillingInputs('remove', 'duck')
+            }
+        } else if(item == 'All') {
+
+            for(i = 0; itemAmount > i; i++) {
+                updateCart('remove', 'PorkGyoza')
+                updateCart('remove', 'ChickenGyoza')
+                updateCart('remove', 'VegetableGyoza')
+                updateCart('remove', 'PrawnGyoza')
+                updateCart('remove', 'DuckGyoza')
+            }
     
-            gyozaFillingSelections = document.querySelectorAll('.gyoza_filling_menu select')
+            // gyozaFillingSelections = document.querySelectorAll('.gyoza_filling_menu select')
         
-            for(i = 0; i < gyozaFillingSelections.length; ++i) {
-                gyozaFillingSelections[i].remove()
+            // for(i = 0; i < gyozaFillingSelections.length; ++i) {
+            //     gyozaFillingSelections[i].remove()
         
-            }
+            // }
+        } else if( item == 'last') {
+            updateFillingInputs('remove', 'last')
         }
+        
     }
 
-    // itemAmount = parseInt(gyozaAmount.value) + parseInt(edamameAmount.value) + parseInt(mochiAmount.value);
-    itemAmount = parseInt(gyozaAmount.value);
+    itemAmount = parseInt(porkGyozaAmount.value) + parseInt(chickenGyozaAmount.value) + parseInt(vegetableGyozaAmount.value) + parseInt(prawnGyozaAmount.value) + parseInt(duckGyozaAmount.value);
 
-    
-    // edamameDisplayAmount.innerHTML = `${parseInt(edamameAmount.value)}`
-    // edamameDisplayPrice.innerHTML = `£${parseInt(edamameAmount.value) * edamamePrice}`
-
-    gyozaDisplayAmount.innerHTML = `${parseInt(gyozaAmount.value)}`
-    gyozaDisplayPrice.innerHTML = `£${parseInt(gyozaAmount.value) * gyozaPrice}`
-
-    // mochiDisplayAmount.innerHTML = `${parseInt(mochiAmount.value)}`
-    // mochiDisplayPrice.innerHTML = `£${parseInt(mochiAmount.value) * mochiPrice}`
+    gyozaDisplayAmount.innerHTML = `${itemAmount}`
+    gyozaDisplayPrice.innerHTML = `£${itemAmount * gyozaPrice}`
     
     totalDisplayAmount.innerHTML = itemAmount;
-    // totalDisplayPrice.innerHTML = `<p>£${(parseInt(gyozaAmount.value) * gyozaPrice) + (parseInt(edamameAmount.value) * edamamePrice) + (parseInt(mochiAmount.value) * mochiPrice)}</p>`
-    totalDisplayPrice.innerHTML = `<p>£${(parseInt(gyozaAmount.value) * gyozaPrice)}</p>`
+    totalDisplayPrice.innerHTML = `<p>£${itemAmount * gyozaPrice}</p>`
     
-    // if(parseInt(gyozaAmount.value) > 0 || parseInt(edamameAmount.value) > 0 || parseInt(mochiAmount.value) > 0) {
-    //     goToCart.classList.add('show_go_to_cart')
-    // }
-    
-    if(parseInt(gyozaAmount.value) > 0) {
+    if(itemAmount > 0) {
         goToCart.classList.add('show_go_to_cart')
     } else {
         setTimeout(() => {
@@ -104,37 +112,20 @@ function updateCart(operation, item) {
 
     goToCartAmount.innerHTML = `Your order <b>(${itemAmount})</b> 🥟`
 
-    if(parseInt(gyozaAmount.value) > 0) {
+    if(itemAmount > 0) {
         emptySign.style.display = 'none';
     } else {
         emptySign.style.display = 'block'
     }
 
-    // if(parseInt(edamameAmount.value) > 0) {
-    //     removeEdamameBt.style.display = 'block';
+    // if(itemAmount <= 0) {
+    //     removeGyozaBt.style.display = 'block';
     // } else {
-    //     removeEdamameBt.style.display = 'none';
+    //     removeGyozaBt.style.display = 'none';
     // }
-
-    if(parseInt(gyozaAmount.value) > 0) {
-        removeGyozaBt.style.display = 'block';
-    } else {
-        removeGyozaBt.style.display = 'none';
-    }
-
-    // if(parseInt(mochiAmount.value) > 0) {
-    //     removeMochiBt.style.display = 'block';
-    // } else {
-    //     removeMochiBt.style.display = 'none';
-    // }
-
 }
 
-
-
-const removeEdamameBt = document.querySelector('.remove_item.edamame');
-const removeGyozaBt = document.querySelector('.remove_item.gyoza');
-const removeMochiBt = document.querySelector('.remove_item.mochi');
+// const removeGyozaBt = document.querySelector('.remove_item.gyoza');
 
 
 function toggleCart() {
@@ -155,7 +146,8 @@ goToCart.addEventListener('click', toggleCart)
 
 
 
-
+let dataPork = document.querySelector('input[value="Pork"');
+let dataChicken = document.querySelector('input[value="Pork"')
 
 const gyozaFillingMenu = document.querySelector('.gyoza_filling_menu');
 let fillings = document.querySelectorAll('.gyoza_filling_menu .quantity input')
@@ -167,32 +159,74 @@ const emptySign = document.querySelector('.empty_sign')
 
 let fillingCounter = 0;
 
-function updateFillingInputs(operation) {
+function updateFillingInputs(operation, filling) {
 
     if(operation == 'add') {
 
         fillingCounter = fillingCounter + 1;
     
-        gyozaFillingPrepend.insertAdjacentHTML('beforeend', `
-            <select name="select_filling_${fillingCounter}">
-                <option value="" disabled selected>...</option>
-                <option value="pork_filling">Pork</option>
-                <option value="chicken-filling">Chicken</option>
-                <option value="vegan_filling">Vegan</option>
-            </select>
-        `)
+        if(filling == 'pork') {
+            gyozaFillingPrepend.insertAdjacentHTML('afterbegin', `
+                <input class="filling_output" name="select_filling_${fillingCounter}" value="Pork" readonly />
+            `)
+        } else if(filling == 'chicken') {
+            gyozaFillingPrepend.insertAdjacentHTML('afterbegin', `
+                <input class="filling_output" name="select_filling_${fillingCounter}" value="Chicken" readonly />
+            `)
+        } else if(filling == 'vegetable') {
+            gyozaFillingPrepend.insertAdjacentHTML('afterbegin', `
+                <input class="filling_output" name="select_filling_${fillingCounter}" value="Vegetable" readonly />
+            `)
+        } else if(filling == 'prawn') {
+            gyozaFillingPrepend.insertAdjacentHTML('afterbegin', `
+                <input class="filling_output" name="select_filling_${fillingCounter}" value="Prawn" readonly />
+            `)
+        } else if(filling == 'duck') {
+            gyozaFillingPrepend.insertAdjacentHTML('afterbegin', `
+                <input class="filling_output" name="select_filling_${fillingCounter}" value="Duck" readonly />
+            `)
+        }
     } else if(operation == 'remove') {
         fillingCounter = fillingCounter - 1;
         
-        if(parseInt(gyozaAmount.value) >= 0) {
-            gyozaFillingLastSelection = document.querySelector('.gyoza_filling_menu select:first-of-type');
-    
-            for(i = -1; i < gyozaFillingSelections.length; ++i) {
-                if(gyozaFillingLastSelection) {
-                    gyozaFillingLastSelection.remove()
+
+        if(filling == 'pork') {
+            if(parseInt(porkGyozaAmount.value) >= 0) {
+                if(document.querySelector('input[value="Pork"]')) {
+                    document.querySelector('input[value="Pork"]').remove()
+                }
+            }
+        } else if(filling == 'chicken') {
+            if(parseInt(chickenGyozaAmount.value) >= 0) {
+                if(document.querySelector('input[value="Chicken"]')) {
+                    document.querySelector('input[value="Chicken"]').remove()
+                }
+            }
+        } else if(filling == 'vegetable') {
+            if(parseInt(vegetableGyozaAmount.value) >= 0) {
+                if(document.querySelector('input[value="Vegetable"]')) {
+                    document.querySelector('input[value="Vegetable"]').remove()
+                }
+            }
+        } else if(filling == 'prawn') {
+            if(parseInt(prawnGyozaAmount.value) >= 0) {
+                if(document.querySelector('input[value="Prawn"]')) {
+                    document.querySelector('input[value="Prawn"]').remove()
+                }
+            }
+        } else if(filling == 'duck') {
+            if(parseInt(duckGyozaAmount.value) >= 0) {
+                if(document.querySelector('input[value="Duck"]')) {
+                    document.querySelector('input[value="Duck"]').remove()
                 }
             }
         }
+    
+        // for(i = -1; i < gyozaFillingSelections.length; ++i) {
+        //     if(gyozaFillingLastSelection) {
+        //         gyozaFillingLastSelection.remove()
+        //     }
+        // }
     }
 }
 
