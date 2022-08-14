@@ -536,7 +536,7 @@ select:-webkit-autofill:focus {
   width: calc(100% - clamp(0.15rem, 0.8vw, 0.2rem));
   max-width: 37rem;
   z-index: 3;
-  transition: transform 0.4s cubic-bezier(0.24, 0.24, 0.22, 0.69);
+  transition: transform 0.3s cubic-bezier(0.62, -0.36, 0.2, 0.8);
   transform: translateX(100%);
   background-color: var(--dark);
   background-image: url(assets/noise.jpg);
@@ -629,7 +629,7 @@ select:-webkit-autofill:focus {
 } .order_summary .item {
   color: #CCC;
 } .column.fourth.gyoza_filling_menu {
-  padding: 0 0.2rem clamp(0.3rem, 2vw, 0.6rem) 0;
+  padding: calc(clamp(0.3rem, 2vw, 0.6rem) / 2) 0.2rem clamp(0.3rem, 2vw, 0.6rem) 0;
 }
 
 .gyoza_filling_menu {
@@ -665,7 +665,7 @@ select:-webkit-autofill:focus {
   border-radius: 0.2rem;
   padding: 0 0.2rem;
   border: 0.0625rem solid #222;
-  padding: clamp(0.05rem, 0.4vw, 0.2rem) 0.4rem;
+  padding: clamp(0.05rem, 0.9vw, 0.3rem) 0.5rem;
   font-size: clamp(0.7rem, 3.3vw, 0.85rem);
   transition: border-color 0.2s ease;
   font-weight: 400;
