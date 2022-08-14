@@ -536,7 +536,7 @@ select:-webkit-autofill:focus {
   width: calc(100% - clamp(0.15rem, 0.8vw, 0.2rem));
   max-width: 37rem;
   z-index: 3;
-  transition: transform 0.3s cubic-bezier(0.62, -0.36, 0.2, 0.8);
+  transition: transform 0.3s cubic-bezier(0.5, 0.2, 0.25, 0.75);
   transform: translateX(100%);
   background-color: var(--dark);
   background-image: url(assets/noise.jpg);
@@ -741,7 +741,7 @@ select:-webkit-autofill:focus {
   align-items: center;
 } .input_ctnr input {
   font-size: clamp(0.7rem, 3.5vw, 0.9rem);
-  border: 0.0625rem solid #666;
+  border: 0.0625rem solid #333;
   padding: clamp(0.2rem, 1.8vw, 0.4rem) 0.6rem;
   color: var(--light);
   width: 50%;
@@ -1480,7 +1480,6 @@ select:-webkit-autofill:focus {
     height: 3.2rem;
   } .cart_sec {
     width: clamp(15rem, 83vw, 36rem);
-    transition: transform 0.45s cubic-bezier(0.39, 0.58, 0.57, 1);
   } .cart_sec .logo_cart {
     width: 95%;
     margin:0 auto;
