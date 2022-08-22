@@ -65,14 +65,16 @@ html,
   
   body::-webkit-scrollbar, .cart_sec > .content::-webkit-scrollbar, .drinks_ctnr::-webkit-scrollbar {
     width: 0.4rem;
+  } .gyoza_filling_menu::-webkit-scrollbar {
+    width: 0.3rem;
   }
   
   ::-webkit-scrollbar-track {
-    background-color: var(--light);
+    background-color: var(--dark);
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color: var(--dark);
+    background-color: var(--light);
   }
 
   .width1 {
@@ -629,7 +631,7 @@ select:-webkit-autofill:focus {
 } .order_summary .item {
   color: #CCC;
 } .column.fourth.gyoza_filling_menu {
-  padding: calc(clamp(0.3rem, 2vw, 0.6rem) / 2) 0.2rem clamp(0.3rem, 2vw, 0.6rem) 0;
+  padding: calc(clamp(0.3rem, 2vw, 0.6rem) / 2) 0.6rem clamp(0.3rem, 2vw, 0.6rem) 0rem;
 }
 
 .gyoza_filling_menu {
@@ -637,9 +639,8 @@ select:-webkit-autofill:focus {
   flex-direction: column;
   gap: clamp(0.5rem, 2vw, 0.5rem);
   padding: clamp(0.5rem, 3vw, 1rem) 0.8rem;
-  /* overflow-y: auto;
-  overflow-x: hidden;
-  max-height: 4vh; */
+  max-height: 10rem;
+  overflow-y: auto;
   transition: max-height 0.4s cubic-bezier(0, 0, 0.2, 1);
 } .gyoza_filling_menu p {
   margin: 0 auto clamp(0.9rem, 2vw, 1.2rem) auto;
